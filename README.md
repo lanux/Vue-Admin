@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash.png" />
+
 # Vue-Admin-Demo
 
 > Vue-Admin-Demo
