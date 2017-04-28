@@ -13,10 +13,10 @@ npm run build
 ```
 
 <p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/login.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash2.png" /></p><p>
-<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/login.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/menu.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/menu2.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/menu5.png" /></p><p>
