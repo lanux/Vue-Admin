@@ -1,7 +1,3 @@
-# Vue-Admin-Demo
-
-> Vue-Admin-Demo
-
 ## Build Setup
 
 ``` bash
@@ -14,6 +10,17 @@ npm run dev
 # build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
+
+<p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/login.png" /></p><p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash.png" /></p><p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash.png" /></p><p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash2.png" /></p><p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/menu.png" /></p><p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/menu2.png" /></p><p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/menu5.png" /></p><p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/resource.png" /></p><p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/role.png" /></p><p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/role4.png" /></p><p>
+<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/user.png" /></p>
