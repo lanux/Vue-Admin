@@ -68,7 +68,7 @@
         if (this.$route.query && this.$route.query != null && this.$route.query.redirect && this.$route.query.redirect != null) {
           redirectUrl = this.$route.query.redirect;
         }
-        this.$http.get("./static/data/data.json", this.form).then(res => {
+        this.$http.get(api.TEST_DATA, this.form).then(res => {
           res.data = res.data.loginInfo;
           auth.login(res.data.sid);
           window.sessionStorage.setItem("user-info", JSON.stringify(res.data.user));

@@ -103,7 +103,7 @@
     }),
     methods: {
       logout(){
-        this.$http.get("./static/data/data.json")
+        this.$http.get(api.TEST_DATA)
           .then(res => {
             auth.logout();
             this.$http.defaults.headers.common['authSid'] = '';
@@ -133,7 +133,7 @@
       }
       this.count = 0;
       this.list = [];
-      this.$http.get("./static/data/data.json")
+      this.$http.get(api.TEST_DATA)
         .then(res => {
             res.data = res.data.messageList;
             if (res.data && res.data.length>0){

@@ -1,4 +1,4 @@
-export const CONTEXT = './imp';
+export const CONTEXT = './Vue-Admin';
 export const LOGIN = CONTEXT + '/login';
 export const LOGOUT = CONTEXT + '/logout';
 export const CHANGE_PWD = CONTEXT + '/changePwd';
@@ -58,4 +58,5 @@ export const IMAGE_INFO_DOWNLOAD_LOCAL = CONTEXT + '/img/info/downloadLocal';
 export const IMAGE_INFO_DOWNLOAD_OSS = CONTEXT + '/img/info/downloadOss';
 
 export const MSG_TOP_TEN = CONTEXT + '/msg/topTen';
+export const TEST_DATA = CONTEXT + '/static/data/data.json';
 

@@ -154,7 +154,7 @@
         this.currentRow = row;
         this.dialogVisible = true;
         if (this.roleTree.length <= 0) {
-          this.$http.get( "./static/data/data.json?selectChildren=true")
+          this.$http.get( api.TEST_DATA + "?selectChildren=true")
             .then(res => {
               this.roleTree = res.data.roleList
             })

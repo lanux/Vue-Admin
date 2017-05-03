@@ -168,7 +168,7 @@
         }
       },
       load(){
-        this.$http.get("./static/data/data.json")
+        this.$http.get(api.TEST_DATA)
           .then(res=>{
             res.data = res.data.resourceList;
             this.resourceTree = [];

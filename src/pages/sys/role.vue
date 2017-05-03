@@ -175,7 +175,7 @@
           })
       },
       load(){
-        this.$http.get("./static/data/data.json")
+        this.$http.get(api.TEST_DATA)
           .then(res => {
               res.data = res.data.roleList;
             this.roleTree = [];
@@ -201,7 +201,7 @@
           this.dialogVisible = true;
           if(this.resourceTree==null||this.resourceTree.length<=0){
             this.dialogLoading = true;
-            this.$http.get("./static/data/data.json")
+            this.$http.get(api.TEST_DATA)
               .then(res => {
                 this.dialogLoading = false;
                 this.resourceTree = res.data.resourceList;
