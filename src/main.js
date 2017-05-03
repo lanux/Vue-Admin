@@ -70,7 +70,7 @@ Vue.use(VueProgressBar, options)
 //定义路由
 const router = new VueRouter({
   routes: routeConfig,
-  mode: 'history'
+  //mode: 'history'
 })
 
 sync(store, router)
