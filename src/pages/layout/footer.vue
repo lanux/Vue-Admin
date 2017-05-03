@@ -1,6 +1,6 @@
 <template>
   <footer class="main-footer">
-    Copyright &copy; 2016-2017 <a href="http://www.lanux.com">Lanux</a>. All rights reserved.
+    Copyright &copy; 2016-2017 <a href="https://lanux.github.io/Vue-Admin/">Lanux</a>. All rights reserved.
   </footer>
 </template>
 <script>
