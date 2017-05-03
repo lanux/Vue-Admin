@@ -143,11 +143,11 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "./";
+/******/ 	__webpack_require__.p = "/Vue-Admin/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/ })
 /************************************************************************/
 /******/ ([]);
-//# sourceMappingURL=manifest.164f0cb4298fa7f618ab.js.map
+//# sourceMappingURL=manifest.118c3d9067b4e74517e2.js.map
