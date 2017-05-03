@@ -1113,7 +1113,7 @@ var store = new _vuex2.default.Store({
     loadMenuList: function loadMenuList(_ref2) {
       var commit = _ref2.commit;
 
-      _vue2.default.axios.get("/static/data/data.json").then(function (res) {
+      _vue2.default.axios.get(api.TEST_DATA).then(function (res) {
         commit(types.LOAD_MENU, res.data.menuList);
       }).catch(function (exp) {
         return commit(types.LOAD_MENU, _defaultMenu2.default);
@@ -1207,7 +1207,7 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var CONTEXT = exports.CONTEXT = './imp';
+var CONTEXT = exports.CONTEXT = './Vue-Admin';
 var LOGIN = exports.LOGIN = CONTEXT + '/login';
 var LOGOUT = exports.LOGOUT = CONTEXT + '/logout';
 var CHANGE_PWD = exports.CHANGE_PWD = CONTEXT + '/changePwd';
@@ -1266,6 +1266,7 @@ var IMAGE_INFO_DOWNLOAD_LOCAL = exports.IMAGE_INFO_DOWNLOAD_LOCAL = CONTEXT + '/
 var IMAGE_INFO_DOWNLOAD_OSS = exports.IMAGE_INFO_DOWNLOAD_OSS = CONTEXT + '/img/info/downloadOss';
 
 var MSG_TOP_TEN = exports.MSG_TOP_TEN = CONTEXT + '/msg/topTen';
+var TEST_DATA = exports.TEST_DATA = CONTEXT + '/static/data/data.json';
 
 /***/ }),
 
@@ -7696,7 +7697,7 @@ exports.default = {
     logout: function logout() {
       var _this = this;
 
-      this.$http.get("./static/data/data.json").then(function (res) {
+      this.$http.get(api.TEST_DATA).then(function (res) {
         _auth2.default.logout();
         _this.$http.defaults.headers.common['authSid'] = '';
         _this.$router.push({ path: '/login' });
@@ -7727,7 +7728,7 @@ exports.default = {
     }
     this.count = 0;
     this.list = [];
-    this.$http.get("./static/data/data.json").then(function (res) {
+    this.$http.get(api.TEST_DATA).then(function (res) {
       res.data = res.data.messageList;
       if (res.data && res.data.length > 0) {
         _this2.count = res.data.length;
@@ -7804,7 +7805,7 @@ exports.default = {
       if (this.$route.query && this.$route.query != null && this.$route.query.redirect && this.$route.query.redirect != null) {
         redirectUrl = this.$route.query.redirect;
       }
-      this.$http.get("./static/data/data.json", this.form).then(function (res) {
+      this.$http.get(api.TEST_DATA, this.form).then(function (res) {
         res.data = res.data.loginInfo;
         _auth2.default.login(res.data.sid);
         window.sessionStorage.setItem("user-info", (0, _stringify2.default)(res.data.user));
@@ -8018,7 +8019,7 @@ exports.default = {
     load: function load() {
       var _this4 = this;
 
-      this.$http.get("./static/data/data.json").then(function (res) {
+      this.$http.get(api.TEST_DATA).then(function (res) {
         _this4.menuTree = res.data.menuList;
       }).catch(function (error) {
         console.log(error);
@@ -8180,7 +8181,7 @@ exports.default = {
     load: function load() {
       var _this4 = this;
 
-      this.$http.get("./static/data/data.json").then(function (res) {
+      this.$http.get(api.TEST_DATA).then(function (res) {
         var _resourceTree;
 
         res.data = res.data.resourceList;
@@ -8325,7 +8326,7 @@ exports.default = {
     load: function load() {
       var _this5 = this;
 
-      this.$http.get("./static/data/data.json").then(function (res) {
+      this.$http.get(api.TEST_DATA).then(function (res) {
         var _roleTree;
 
         res.data = res.data.roleList;
@@ -8386,7 +8387,7 @@ exports.default = {
       this.dialogVisible = true;
       if (this.resourceTree == null || this.resourceTree.length <= 0) {
         this.dialogLoading = true;
-        this.$http.get("./static/data/data.json").then(function (res) {
+        this.$http.get(api.TEST_DATA).then(function (res) {
           _this7.dialogLoading = false;
           _this7.resourceTree = res.data.resourceList;
         }).catch(function (error) {
@@ -8472,7 +8473,7 @@ exports.default = {
       this.currentRow = row;
       this.dialogVisible = true;
       if (this.roleTree.length <= 0) {
-        this.$http.get("/static/data/data.json?selectChildren=true").then(function (res) {
+        this.$http.get(api.TEST_DATA + "?selectChildren=true").then(function (res) {
           _this.roleTree = res.data.roleList;
         });
       }
@@ -8974,4 +8975,4 @@ exports.default = {
 /***/ })
 
 },[704]);
-//# sourceMappingURL=app.5da4fb2ce3cbf4666bfd.js.map
+//# sourceMappingURL=app.ec0240cf5d3ed6c5a56d.js.map
