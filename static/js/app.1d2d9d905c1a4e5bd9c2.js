@@ -8723,8 +8723,7 @@ var options = {
 _vue2.default.use(_vueProgressbar2.default, options);
 
 var router = new _vueRouter2.default({
-  routes: _router2.default,
-  mode: 'history'
+  routes: _router2.default
 });
 
 (0, _vuexRouterSync.sync)(_store2.default, router);
@@ -8975,4 +8974,4 @@ exports.default = {
 /***/ })
 
 },[704]);
-//# sourceMappingURL=app.6785100c61085a325b06.js.map
+//# sourceMappingURL=app.1d2d9d905c1a4e5bd9c2.js.map
