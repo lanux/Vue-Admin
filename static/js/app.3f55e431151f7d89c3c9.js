@@ -1113,7 +1113,7 @@ var store = new _vuex2.default.Store({
     loadMenuList: function loadMenuList(_ref2) {
       var commit = _ref2.commit;
 
-      _vue2.default.axios.get("./static/data/data.json").then(function (res) {
+      _vue2.default.axios.get("/static/data/data.json").then(function (res) {
         commit(types.LOAD_MENU, res.data.menuList);
       }).catch(function (exp) {
         return commit(types.LOAD_MENU, _defaultMenu2.default);
@@ -8974,4 +8974,4 @@ exports.default = {
 /***/ })
 
 },[704]);
-//# sourceMappingURL=app.1d2d9d905c1a4e5bd9c2.js.map
+//# sourceMappingURL=app.3f55e431151f7d89c3c9.js.map
