@@ -8472,7 +8472,7 @@ exports.default = {
       this.currentRow = row;
       this.dialogVisible = true;
       if (this.roleTree.length <= 0) {
-        this.$http.get("./static/data/data.json?selectChildren=true").then(function (res) {
+        this.$http.get("/static/data/data.json?selectChildren=true").then(function (res) {
           _this.roleTree = res.data.roleList;
         });
       }
@@ -8974,4 +8974,4 @@ exports.default = {
 /***/ })
 
 },[704]);
-//# sourceMappingURL=app.3f55e431151f7d89c3c9.js.map
+//# sourceMappingURL=app.5da4fb2ce3cbf4666bfd.js.map
