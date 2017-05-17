@@ -9,8 +9,7 @@ npm run dev
 npm run build
 ```
 ## 页面截图
-<p>
-<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/login.png" /></p><p>
+<p><img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/login.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash2.png" /></p><p>
