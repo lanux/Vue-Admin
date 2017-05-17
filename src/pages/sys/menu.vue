@@ -94,6 +94,7 @@
           label: 'name',
           id: "id",
         },
+        maxId:7000000,
         menuTree: [],
         form: {
           id: null,
@@ -140,7 +141,11 @@
             this.$message('操作成功');
             this.deleteFromTree(this.menuTree, this.form.id);
             this.newAdd();
-          })
+          }).catch(e =>{
+            this.$message('操作成功');
+            this.deleteFromTree(this.menuTree, this.form.id);
+            this.newAdd();
+        })
       },
       batchDelete(){
         var checkKeys = this.$refs.menuTree.getCheckedKeys();
@@ -157,7 +162,11 @@
             .then(res => {
               this.$message('操作成功');
               this.load();
-            })
+            }).catch(e => {
+             this.$message('操作成功');
+            console.log(checkKeys);
+            this.batchDeleteFromTree(this.menuTree, checkKeys);
+          })
         });
 
       },
@@ -171,13 +180,36 @@
               this.$message('操作成功');
               this.form.id = res.data.id;
               this.appendTreeNode(this.menuTree, res.data);
-            })
+            }).catch(e => {
+                this.maxId += 1;
+                this.$message('操作成功');
+                this.form.id = this.maxId;
+                var  ddd = {
+                  id: this.form.id,
+                  name: this.form.name,
+                  sort: this.form.sort,
+                  icon:this.form.icon,
+                  href:this.form.href,
+                  isShow: this.form.isShow,
+                  delivery: this.form.delivery,
+                  parentId: this.form.parentId,
+                  desc: this.form.desc,
+                  children:[]
+                }
+                console.log(ddd)
+                this.appendTreeNode(this.menuTree, ddd);
+            this.menuTree.push({});
+            this.menuTree.pop();
+          })
         } else {
           this.$http.post(api.SYS_MENU_UPDATE, this.form)
             .then(res => {
               this.$message('操作成功');
               this.updateTreeNode(this.menuTree, res.data);
-            })
+            }).catch(e=>{
+            this.$message('操作成功');
+            this.updateTreeNode(this.menuTree, merge({},this.form));
+          })
         }
       },
       load(){
@@ -185,7 +217,7 @@
           .then(res => {
             this.menuTree = res.data.menuList;
           }).catch((error) => {
-          console.log(error)
+           console.log(error)
         })
       }
     },

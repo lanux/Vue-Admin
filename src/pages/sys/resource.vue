@@ -88,6 +88,7 @@
           id: "id",
         },
         resourceTree: [],
+        maxId:700000,
         form: {
           id: null,
           parentId: null,
@@ -127,7 +128,11 @@
             this.$message('操作成功');
             this.deleteFromTree(this.resourceTree, this.form.id);
             this.newAdd();
-          })
+          }).catch(e =>{
+          this.$message('操作成功');
+          this.deleteFromTree(this.resourceTree, this.form.id);
+          this.newAdd();
+        })
       },
       batchDelete(){
         var checkKeys = this.$refs.resourceTree.getCheckedKeys();
@@ -144,7 +149,11 @@
             .then(res => {
               this.$message('操作成功');
               this.load();
-            })
+            }).catch(e => {
+            this.$message('操作成功');
+            console.log(checkKeys);
+            this.batchDeleteFromTree(this.resourceTree, checkKeys);
+          })
         });
 
       },
@@ -158,13 +167,34 @@
               this.$message('操作成功');
               this.form.id = res.data.id;
               this.appendTreeNode(this.resourceTree, res.data);
-            })
+            }).catch(e => {
+            this.maxId += 1;
+            this.$message('操作成功');
+            this.form.id = this.maxId;
+            var  ddd = {
+              id: this.form.id,
+              name: this.form.name,
+              sort: this.form.sort,
+              type:this.form.type,
+              code:this.form.code,
+              remarks: this.form.remarks,
+              parentId: this.form.parentId,
+              usable: this.form.usable,
+              children:[],
+            }
+            this.appendTreeNode(this.resourceTree, ddd);
+            this.resourceTree.push({});
+            this.resourceTree.pop();
+          })
         } else {
           this.$http.post(api.SYS_RESOURCE_UPDATE, this.form)
             .then(res => {
               this.$message('操作成功');
               this.updateTreeNode(this.resourceTree, res.data);
-            })
+            }).catch(e=>{
+            this.$message('操作成功');
+            this.updateTreeNode(this.resourceTree, merge({},this.form));
+          })
         }
       },
       load(){

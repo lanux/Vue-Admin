@@ -23,7 +23,8 @@ const appendTreeNode = (treeArray, item, idPropName = "id", parentPropName = "pa
     treeArray.splice(i, 0, item);
     return;
   }
-  treeArray.forEach((value, index, array) => {
+  for (var j = 0; j < treeArray.length; j++) {
+    var value = treeArray[j];
     if (item[parentPropName] == value[idPropName]) {
       if (value[childrenPropName] && value[childrenPropName].length > 0) {
         let i = value[childrenPropName].findIndex(p => p.sort > item.sort);
@@ -38,11 +39,11 @@ const appendTreeNode = (treeArray, item, idPropName = "id", parentPropName = "pa
     } else {
       appendTreeNode(value[childrenPropName], item, idPropName, parentPropName, childrenPropName);
     }
-  })
+  }
 }
 
 const deleteFromTree = (list, id, idPropName = "id", childrenPropName = "children") => {
-  if (!list || list == null || list.length <= 0)return null;
+  if (!list || list == null || list.length <= 0)return true;
   for (var i = 0; i < list.length; i++) {
     if (list[i][idPropName] == id) {
       list.splice(i, 1);
@@ -55,6 +56,20 @@ const deleteFromTree = (list, id, idPropName = "id", childrenPropName = "childre
     }
   }
   return false;
+}
+
+const batchDeleteFromTree = (list, ids, idPropName = "id", childrenPropName = "children") => {
+  if (!list || list == null || list.length <= 0)return;
+  if (!ids || ids == null || ids.length <= 0)return;
+  for (var i = 0; i < list.length; i++) {
+    if (ids.findIndex(x => x == list[i][idPropName])>-1) {
+      list.splice(i, 1);
+      i--;
+      continue;
+    } else {
+      batchDeleteFromTree(list[i][childrenPropName], ids, idPropName, childrenPropName);
+    }
+  }
 }
 
 const updateTreeNode = (list, item, idPropName = "id", childrenPropName = "children") => {
@@ -79,6 +94,7 @@ export default {
     findFromTree,
     appendTreeNode,
     deleteFromTree,
-    updateTreeNode
+    updateTreeNode,
+    batchDeleteFromTree
   }
 };

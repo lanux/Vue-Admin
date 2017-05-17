@@ -106,6 +106,7 @@
         },
         roleTree: [],
         resourceTree:[],
+        maxId:700000,
         form: {
           id: null,
           parentId: null,
@@ -154,7 +155,11 @@
             .then(res => {
               this.$message('操作成功');
               this.load();
-            })
+            }).catch(e => {
+            this.$message('操作成功');
+            console.log(checkKeys);
+            this.batchDeleteFromTree(this.roleTree, checkKeys);
+          })
         });
 
       },
@@ -164,7 +169,23 @@
           .then(res => {
             this.form.id = res.data.id;
             this.appendTreeNode(this.roleTree, res.data);
-          })
+          }).catch(e => {
+          this.maxId += 1;
+          this.$message('操作成功');
+          this.form.id = this.maxId;
+          var  ddd = {
+            id: this.form.id,
+            name: this.form.name,
+            sort: this.form.sort,
+            enName:this.form.enName,
+            parentId: this.form.parentId,
+            usable: this.form.usable,
+            children:[]
+          }
+          this.appendTreeNode(this.roleTree, ddd);
+          this.roleTree.push({});
+          this.roleTree.pop();
+        })
       },
       deleteSelected(id){
         this.$http.get(api.SYS_ROLE_DELETE + "?roleIds=" + id)
@@ -172,7 +193,11 @@
             this.$message('操作成功');
             this.deleteFromTree(this.roleTree, id);
             this.newAdd();
-          })
+          }).catch(e =>{
+          this.$message('操作成功');
+          this.deleteFromTree(this.roleTree, id);
+          this.newAdd();
+        })
       },
       load(){
         this.$http.get(api.TEST_DATA)

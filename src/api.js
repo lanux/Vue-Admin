@@ -1,4 +1,6 @@
-export const CONTEXT = './Vue-Admin';
+export const CONTEXT = '';
+// export const CONTEXT = './Vue-Admin';
+
 export const LOGIN = CONTEXT + '/login';
 export const LOGOUT = CONTEXT + '/logout';
 export const CHANGE_PWD = CONTEXT + '/changePwd';
@@ -41,21 +43,6 @@ export const SYS_SET_USER_ROLE = CONTEXT + '/sys/user/setRoles';
 export const UPLOAD_FORM_FILE = CONTEXT + '/upload/imageUpload';
 export const UPLOAD_FORM_FILE_TEMP = CONTEXT + '/upload/formFile';
 export const UPLOAD_FORM_FILE_BATCH = CONTEXT + '/upload/batch';
-
-export const PROCESS_TEMPLATE_LIST = CONTEXT + '/img/process/template/list';
-export const PROCESS_TEMPLATE_PAGE = CONTEXT + '/img/process/template/page';
-export const PROCESS_TEMPLATE_SAVE = CONTEXT + '/img/process/template/save';
-export const PROCESS_TEMPLATE_DELETE = CONTEXT + '/img/process/template/delete';
-export const PROCESS_TEMPLATE_GET = CONTEXT + '/img/process/template/get';
-export const PROCESS_DIR = CONTEXT + '/img/process/dir';
-export const PROCESS_BATCH_URLS = CONTEXT + '/img/process/batchUrls';
-export const PROCESS_RESULT = CONTEXT + '/img/process/result';
-export const PROCESS_RESULT_SUMMARY = CONTEXT + '/img/process/summaryRst';
-export const PROCESS_CHANGE = CONTEXT + '/img/process/change';
-
-export const IMAGE_INFO_PREVIEW = CONTEXT + '/img/info/preview';
-export const IMAGE_INFO_DOWNLOAD_LOCAL = CONTEXT + '/img/info/downloadLocal';
-export const IMAGE_INFO_DOWNLOAD_OSS = CONTEXT + '/img/info/downloadOss';
 
 export const MSG_TOP_TEN = CONTEXT + '/msg/topTen';
 export const TEST_DATA = CONTEXT + '/static/data/data.json';
