@@ -5,7 +5,7 @@
         <div class="login-form">
           <div class="card-block">
             <h1>Vue-Admin-Login</h1>
-            <p class="text-muted">使用用户名登录</p>
+            <p class="text-muted">任意用户名/密码登录</p>
             <div class="input-group m-b-1">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input type="text" class="form-control" placeholder="Username" v-model="form.username">
