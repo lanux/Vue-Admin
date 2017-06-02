@@ -10,7 +10,7 @@ npm run build
 ```
 
 - #### 打包发布,修改根路径名
-1. 修改文件 **[./Vue-Admin/config/index.js](https://github.com/lanux/Vue-Admin/blob/master/config/index.js)**
+1. 修改 **[./Vue-Admin/config/index.js](https://github.com/lanux/Vue-Admin/blob/master/config/index.js)**   参数:build.assetsPublicPath
 ```javascript
 //eg.  assetsPublicPath: '/Vue-Admin/'
 assetsPublicPath: 'Your path name';
