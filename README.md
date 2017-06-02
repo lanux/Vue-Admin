@@ -8,6 +8,19 @@ npm install
 npm run dev
 npm run build
 ```
+
+- #### 打包发布,修改根路径名
+1. 修改文件 **[./Vue-Admin/config/index.js](https://github.com/lanux/Vue-Admin/blob/master/config/index.js)**
+```javascript
+//eg.  assetsPublicPath: '/Vue-Admin/'
+assetsPublicPath: 'Your path name';
+```
+2. 修改 **[./Vue-Admin/src/api.js](https://github.com/lanux/Vue-Admin/blob/master/src/api.js)**
+```javascript
+// export const CONTEXT = './Vue-Admin';
+export const CONTEXT = 'Your path name';
+```
+
 ## 页面截图
 <p><img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/login.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash.png" /></p><p>
