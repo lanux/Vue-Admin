@@ -1,4 +1,4 @@
-[演示地址](https://lanux.github.io/Vue-Admin/ "Vue-Admin") 
+[演示地址](https://lanux.github.io/Vue-Admin/ "Vue-Admin") （初次加载稍慢，由于webpack打包的一个文件有点大）
 >账号密码任意
 
 ## Build Setup
