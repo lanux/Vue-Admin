@@ -195,11 +195,6 @@
     color: #fff;
   }
 
-  .main-header .navbar .sidebar-toggle:focus,
-  .main-header .navbar .sidebar-toggle:active {
-    background: transparent;
-  }
-
   .main-header .navbar .nav > li > a > .label {
     position: absolute;
     top: 9px;
