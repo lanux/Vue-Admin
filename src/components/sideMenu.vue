@@ -90,12 +90,12 @@
 <style>
 
   .showSlide {
-    animation-duration: .377s;
+    animation-duration: .2s;
     animation-name: slideInLeft;
   }
 
   .hideSlide {
-    animation-duration: .377s;
+    animation-duration: .2s;
     animation-name: slideOutLeft;
   }
 

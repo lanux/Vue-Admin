@@ -162,7 +162,7 @@
 </script>
 <style scoped>
   .animated {
-    animation-duration: .5s;
+    animation-duration: .2s;
   }
 
   .main-header a {

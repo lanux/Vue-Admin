@@ -175,7 +175,7 @@
           if (resizeTimer) clearTimeout(resizeTimer);
           resizeTimer = setTimeout(function () {
             that.drawbar('gotobedbar');
-          }, 500);
+          }, 300);
         }
       });
     },
@@ -185,7 +185,7 @@
         var that = this;
         setTimeout(function () {
           that.drawbar('gotobedbar');
-        }, 500);
+        }, 300);
       },
     }
   }
