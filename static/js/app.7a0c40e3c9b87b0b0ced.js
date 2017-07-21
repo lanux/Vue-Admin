@@ -7648,7 +7648,7 @@ exports.default = {
         if (resizeTimer) clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
           that.drawbar('gotobedbar');
-        }, 100);
+        }, 300);
       };
     });
   },
@@ -7659,7 +7659,7 @@ exports.default = {
       var that = this;
       setTimeout(function () {
         that.drawbar('gotobedbar');
-      }, 500);
+      }, 300);
     }
   }
 };
@@ -9128,4 +9128,4 @@ exports.default = {
 /***/ })
 
 },[706]);
-//# sourceMappingURL=app.3082872663ca1f48cf55.js.map
+//# sourceMappingURL=app.7a0c40e3c9b87b0b0ced.js.map
