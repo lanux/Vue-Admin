@@ -1,4 +1,4 @@
-[演示地址](https://lanux.github.io/Vue-Admin/ "Vue-Admin") 
+[演示地址](https://lanux.github.io/Vue-Admin/ "Vue-Admin")
 >账号密码任意
 
 ## Build Setup
@@ -22,8 +22,9 @@ export const CONTEXT = 'Your path name';
 ```
 
 ## 页面截图
-<p><img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/login.png" /></p><p>
-<img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash.png" /></p><p>
+
+<p><img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/login.png" /></p>
+<p><img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/img/coll.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/dash2.png" /></p><p>
 <img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/menu.png" /></p><p>
