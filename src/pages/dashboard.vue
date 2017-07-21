@@ -10,6 +10,7 @@
 
 <script>
   import echarts from 'echarts';
+  import macarons from 'echarts/theme/macarons';
   import data from '../../static/data/data.json';
   export default {
     data() {
@@ -38,7 +39,7 @@
         let height = document.documentElement.clientHeight;
         height -= 120;
         o.style.height= height+"px";
-        this.chart = echarts.init(o);
+        this.chart = echarts.init(o,'macarons');
         var option = {
           title: {
             text: '每日数据统计',
@@ -81,7 +82,7 @@
           dataZoom: {
             show: true,
             realtime: true,
-            start: 50,
+            start: 0,
             end: 100
           },
           xAxis: [
@@ -105,7 +106,7 @@
               data: function () {
                 var list = [];
                 for (var i = 1; i <= 30; i++) {
-                  list.push(Math.round(Math.random() * 3000));
+                  list.push(Math.round(Math.random() * 1000));
                 }
                 return list;
               }()
@@ -118,7 +119,7 @@
               data: function () {
                 var list = [];
                 for (var i = 1; i <= 30; i++) {
-                  list.push(Math.round(Math.random() * 800));
+                  list.push(Math.round(Math.random() * 600));
                 }
                 return list;
               }()

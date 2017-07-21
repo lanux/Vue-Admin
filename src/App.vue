@@ -2,8 +2,8 @@
   <div class="wrapper fixed">
     <vue-progress-bar></vue-progress-bar>
     <imp-header></imp-header>
-    <side-menu :show="sidebar.opened && !sidebar.hidden"></side-menu>
-    <div class="content-wrapper">
+    <side-menu></side-menu>
+    <div class="content-wrapper" :class="{ slideCollapse: sidebar.collapsed,mobileSide:device.isMobile}">
       <section class="content">
         <transition mode="out-in" enter-active-class="fadeIn" leave-active-class="fadeOut" appear>
           <router-view></router-view>
@@ -20,7 +20,6 @@
   import sideMenu from './components/sideMenu.vue'
   import impHeader from "./pages/layout/header.vue"
   import impFooter from "./pages/layout/footer.vue"
-  require("jquery-slimscroll/jquery.slimscroll.js")
   import {mapGetters, mapActions,mapMutations} from 'vuex'
   import * as types from "./store/mutation-types"
   import 'animate.css'
@@ -34,20 +33,22 @@
     },
     computed: {
         ...mapGetters({
-            sidebar: 'sidebar'
+            sidebar: 'sidebar',
+            device:'device',
         })
     },
     data: function () {
       return {
         active: true,
         headerFixed: true,
-        breadcrumb: []
+        breadcrumb: [],
       }
     },
     methods: {
       ...mapMutations({
           toggleDevice: types.TOGGLE_DEVICE,
-          toggleSidebar: types.TOGGLE_SIDEBAR
+          toggleSidebar: types.TOGGLE_SIDEBAR,
+          toggleSidebarShow: types.TOGGLE_SIDEBAR_SHOW,
       }),
     },
     watch: {
@@ -62,7 +63,12 @@
           let rect = body.getBoundingClientRect()
           let isMobile = rect.width < WIDTH
           this.toggleDevice(isMobile);
-          this.toggleSidebar(!isMobile)
+          if (isMobile){
+            this.toggleSidebarShow(false);
+            this.toggleSidebar(false);
+          }else{
+            this.toggleSidebarShow(true);
+          }
         }
       }
       document.addEventListener('visibilitychange', handler)
@@ -100,31 +106,6 @@
     }
   }
 
-  // 在状态改变后和断言 DOM 更新前等待一刻
-  Vue.nextTick(() => {
-    if (typeof $.fn.slimScroll != 'undefined') {
-      //Destroy if it exists
-      $(".sidebar").slimScroll({destroy: true}).height("auto");
-      //Add slimscroll
-      $(".sidebar").slimScroll({
-        height: ($(window).height() - $(".main-header").height()) + "px",
-        color: "rgba(0,0,0,0.2)",
-        size: "3px"
-      });
-    }
-    $(window).on("resize", function () {
-      if (typeof $.fn.slimScroll != 'undefined') {
-        //Destroy if it exists
-        $(".sidebar").slimScroll({destroy: true}).height("auto");
-        //Add slimscroll
-        $(".sidebar").slimScroll({
-          height: ($(window).height() - $(".main-header").height()) + "px",
-          color: "rgba(0,0,0,0.2)",
-          size: "3px"
-        });
-      }
-    });
-  })
 </script>
 
 <style>
@@ -151,17 +132,19 @@
     -o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
     margin-left: 230px;
-    z-index: 820;
     padding-top: 50px;
     min-height: 100%;
-    z-index: 800;
   }
-  @media (max-width: 800px) {
-    .content-wrapper{
-      margin-left: 0px;
-    }
-  }
+
   .content-wrapper .content {
     padding: 1.25rem;
+  }
+
+  .content-wrapper.slideCollapse{
+    margin-left: 44px;
+  }
+
+  .content-wrapper.mobileSide{
+    margin-left: 0px;
   }
 </style>

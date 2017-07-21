@@ -16,6 +16,7 @@ const store = new Vuex.Store({
     menuList: state => state.menuList,
     sidebar: state => state.sidebar,
     userInfo:state => state.userInfo,
+    device:state => state.device,
   },
   // modules: {
   //   app,
@@ -25,7 +26,8 @@ const store = new Vuex.Store({
     loading: false,
     menuList: {},
     sidebar: {
-      opened: true
+      collapsed: false,
+      show:true,
     },
     device: {
       isMobile: false
@@ -46,10 +48,16 @@ const store = new Vuex.Store({
     [types.SET_USER_INFO] (state, info) {
       state.userInfo = info;
     },
-    [types.TOGGLE_SIDEBAR] (state, open) {
-      if (open == null) open = !state.sidebar.opened;
-      state.sidebar.opened = open;
-    }
+    [types.TOGGLE_SIDEBAR] (state, collapsed) {
+      if (collapsed == null) collapsed = !state.sidebar.collapsed;
+      state.sidebar.collapsed = collapsed;
+    },
+    [types.TOGGLE_SIDEBAR_SHOW] (state,show) {
+      if (show == null) state.sidebar.show = !state.sidebar.show;
+      else{
+        state.sidebar.show = show;
+      }
+    },
   }, actions: {
     //异步的函数
     toggleLoading: ({commit}) => commit(types.TOGGLE_LOADING),

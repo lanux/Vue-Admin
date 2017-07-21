@@ -1,11 +1,8 @@
 <template>
-  <header class="main-header animated">
+  <header class="main-header animated" :class="{closeLogo:sidebar.collapsed,mobileLogo:device.isMobile}">
 
     <!-- Logo -->
     <a href="#" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
-      <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">&nbsp;&nbsp; <b>Vue-Admin</b></span>
     </a>
 
@@ -13,7 +10,7 @@
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"
-         @click.stop.prevent="toggleSidebar(!sidebar.opened)">
+         @click.stop.prevent="toggleMenu(!sidebar.collapsed,device.isMobile)">
         <span class="sr-only">Toggle navigation</span>
       </a>
       <!-- Navbar Right Menu -->
@@ -95,13 +92,22 @@
         showProfileBox: false,
         list: [],
         count: 4,
+        show:true,
       }
     },
     computed: mapGetters({
       sidebar: 'sidebar',
-      userInfo: 'userInfo'
+      userInfo: 'userInfo',
+      device:'device',
     }),
     methods: {
+      toggleMenu(collapsed,isMobile){
+        if(isMobile){
+          this.toggleSidebarShow();
+        }else{
+          this.toggleSidebar();
+        }
+      },
       logout(){
         this.$http.get(api.TEST_DATA)
           .then(res => {
@@ -110,7 +116,11 @@
             this.$router.push({path: '/login'});
           })
       },
-      ...mapMutations({toggleSidebar: types.TOGGLE_SIDEBAR, setUserInfo: types.SET_USER_INFO}),
+      ...mapMutations({
+        toggleSidebar: types.TOGGLE_SIDEBAR,
+        toggleSidebarShow: types.TOGGLE_SIDEBAR_SHOW,
+        setUserInfo: types.SET_USER_INFO,
+      }),
       toggleMessage(){
         this.showMessageBox = !this.showMessageBox;
       },
@@ -178,7 +188,7 @@
   }
 
   .main-header .navbar .sidebar-toggle:before {
-    content: "\f0c9";
+    content: "\f03b";
   }
 
   .main-header .navbar .sidebar-toggle:hover {
@@ -631,13 +641,7 @@
 
   .main-header .navbar .sidebar-toggle {
     color: #ffffff;
-    display: none;
-  }
-
-  @media (max-width: 800px) {
-    .main-header .navbar .sidebar-toggle {
-      display: block;
-    }
+    display: block;
   }
 
   .main-header .navbar .sidebar-toggle:hover {
@@ -723,4 +727,25 @@
     }
 
   }
+  .main-header.closeLogo .navbar{
+    margin-left: 0px;
+  }
+
+  .main-header.closeLogo .logo{
+    display: none;
+  }
+  .main-header.closeLogo .sidebar-toggle {
+    background-color: #367fa9;
+    color: #f6f6f6;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .main-header.closeLogo .navbar .sidebar-toggle:before {
+    content: "\f03c";
+  }
+
+  .main-header.mobileLogo .navbar .sidebar-toggle:before {
+    content: "\f03a";
+  }
+
 </style>

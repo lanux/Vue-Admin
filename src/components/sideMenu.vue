@@ -1,10 +1,10 @@
 <template>
-  <aside class="main-sidebar animated" :class="{ slideInLeft: show, slideOutLeft: !show }">
+  <aside class="main-sidebar animated" :class="{ showSlide: sidebar.show, hideSlide: !sidebar.show, expandSide:(!sidebar.collapsed||device.isMobile)}">
     <div class="sidebar">
       <el-menu :default-active="onRoutes"
                :default-openeds="onRouteKeys"
                class="el-menu-vertical-demo"
-               theme="dark" router>
+               theme="dark" router :collapse="sidebar.collapsed&&!device.isMobile" @select="handleSelect">
         <template v-for="item in menuList">
           <sub-menu :param="item"></sub-menu>
         </template>
@@ -15,11 +15,12 @@
 <script>
   import subMenu from "./subMenu.vue"
   import {mapGetters, mapActions, mapMutations} from 'vuex'
+  import * as types from "../store/mutation-types"
 
 
   export default {
     props: {
-      show: Boolean
+      show: Boolean,
     },
     data() {
       return {}
@@ -28,6 +29,10 @@
       subMenu
     },
     computed: {
+      ...mapGetters({
+        sidebar: 'sidebar',
+        device:'device',
+      }),
       onRoutes(){
         return this.$route.path;
       },
@@ -68,6 +73,14 @@
       this.load();
     },
     methods: {
+      handleSelect() {
+        if(this.device.isMobile){
+          this.toggleSidebarShow(false);
+        }
+      },
+      ...mapMutations({
+        toggleSidebarShow: types.TOGGLE_SIDEBAR_SHOW,
+      }),
       ...mapActions({
         load: 'loadMenuList' // 映射 this.load() 为 this.$store.dispatch('loadMenuList')
       })
@@ -75,18 +88,13 @@
   }
 </script>
 <style>
-  @media (max-width: 800px) {
-    .main-sidebar {
-      transform: translate3d(-230px, 0, 0);
-    }
-  }
 
-  .slideInLeft {
+  .showSlide {
     animation-duration: .377s;
     animation-name: slideInLeft;
   }
 
-  .slideOutLeft {
+  .hideSlide {
     animation-duration: .377s;
     animation-name: slideOutLeft;
   }
@@ -98,12 +106,16 @@
     left: 0;
     bottom: 0;
     min-height: 100%;
-    width: 230px;
+    width: 44px;
     z-index: 810;
     -webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
     -moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
     -o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  }
+
+  .expandSide {
+    width: 230px;
   }
 
   .el-menu-vertical-demo .el-submenu .el-menu-item {
@@ -115,5 +127,14 @@
     height: 45px;
     line-height: 45px;
   }
+
+  .main-sidebar .el-menu--collapse {
+    width: 44px;
+  }
+
+  .main-sidebar .el-menu--collapse>.el-menu-item, .el-menu--collapse>.el-submenu>.el-submenu__title {
+    padding-left: 13px !important;
+  }
+
 
 </style>
