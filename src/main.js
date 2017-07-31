@@ -11,7 +11,7 @@ import store from "./store";
 import axios from "axios";
 import filters from "./filters";
 import VueProgressBar from "vue-progressbar";
-import {TOGGLE_SIDEBAR} from "./store/mutation-types";
+import types from "./store/mutation-types";
 import auth from "./auth";
 import Element from "element-ui";
 // import 'element-ui/lib/theme-default/index.css';
@@ -41,7 +41,7 @@ Vue.use(VueRouter)
 
 Vue.component(ImpPanel.name, ImpPanel);
 
-const options = {
+Vue.use(VueProgressBar, {
   color: '#eeeeee',
   failedColor: '#874b4b',
   thickness: '2px',
@@ -52,9 +52,7 @@ const options = {
   autoRevert: true,
   location: 'top',
   inverse: false
-}
-
-Vue.use(VueProgressBar, options)
+})
 
 //定义路由
 const router = new VueRouter({
@@ -68,7 +66,7 @@ const {state} = store
 
 router.beforeEach((route, redirect, next) => {
   if (state.device.isMobile && state.sidebar.opened) {
-    store.commit(TOGGLE_SIDEBAR, false)
+    store.commit(types.TOGGLE_SIDEBAR, false)
   }
   if (!auth.loggedIn() && route.path !== '/login') {
     next({

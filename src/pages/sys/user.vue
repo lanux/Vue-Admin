@@ -30,24 +30,28 @@
           width="45">
         </el-table-column>
         <el-table-column
+          label="照片" width="76">
+          <template scope="scope">
+            <img :src='scope.row.avatar' style="height: 35px;vertical-align: middle;" alt="">
+          </template>
+        </el-table-column>
+        <el-table-column
           prop="name"
           label="名称">
         </el-table-column>
         <el-table-column
-          prop="loginName"
+          prop="nickName"
           label="登录用户名">
-        </el-table-column>
-        <el-table-column
-          prop="photo"
-          label="照片">
         </el-table-column>
         <el-table-column
           prop="email"
           label="邮箱">
         </el-table-column>
         <el-table-column
-          prop="status"
           label="状态">
+          <template scope="scope">
+            {{ scope.row.status===1 ? '已激活' : '未激活' }}
+          </template>
         </el-table-column>
         <el-table-column label="操作" width="285">
           <template scope="scope">
@@ -189,18 +193,17 @@
         });
       },
       loadData(){
-        var d = {"offset":0,"limit":2147483647,"total":1,"size":10,"pages":1,"current":1,"searchCount":true,"optimizeCount":false,"orderByField":null,"records":[
-            {"id":1,"delFlag":0,"companyId":1,"officeId":2,"loginName":"admin","password":"",
-              "no":"0001","name":"系统管理员","email":"lanux@foxmail.com","phone":"731","mobile":"13769999998",
-              "userType":"1","photo":null,"loginIp":"127.0.0.1","loginDate":1453188598000,"loginFlag":"1",
-              "remarks":"最高管理员","status":1,"token":null}],"condition":{},"asc":true,"offsetCurrent":0};
-        this.tableData.rows = d.records;
-//      this.tableData.pagination.total = d.total;
-        //        this.$http.get(api.SYS_USER_PAGE + "?key=" + this.searchKey + "&pageSize=" + this.tableData.pagination.pageSize + "&pageNo=" + this.tableData.pagination.pageNo)
-//          .then(res => {
-//            this.tableData.rows = res.data.records;
-//            this.tableData.pagination.total = res.data.total;
-//          });
+//        var d = {"offset":0,"limit":2147483647,"total":1,"size":10,"pages":1,"current":1,"searchCount":true,"optimizeCount":false,"orderByField":null,"records":[
+//            {"id":1,"delFlag":0,"companyId":1,"officeId":2,"loginName":"admin","password":"",
+//              "no":"0001","name":"系统管理员","email":"lanux@foxmail.com","phone":"731","mobile":"13769999998",
+//              "userType":"1","photo":null,"loginIp":"127.0.0.1","loginDate":1453188598000,"loginFlag":"1",
+//              "remarks":"最高管理员","status":1,"token":null}],"condition":{},"asc":true,"offsetCurrent":0};
+//        this.tableData.rows = d.records;
+          this.$http.get(api.SYS_USER_PAGE + "?key=" + this.searchKey + "&pageSize=" + this.tableData.pagination.pageSize + "&pageNo=" + this.tableData.pagination.pageNo)
+          .then(res => {
+            this.tableData.rows = res.data.records;
+            this.tableData.pagination.total = res.data.total;
+          });
       }
     },
     created(){

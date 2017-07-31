@@ -32,14 +32,14 @@
         </el-dropdown>
         <el-dropdown trigger="click" class="navbar-dropdown">
           <div class="el-dropdown-link">
-            <img src="../../../static/img/user2-160x160.jpg" style="width: 25px;height: 25px;border-radius: 50%; vertical-align: middle;" alt="User Image">
-            Administrator
+            <img :src='userInfo.avatar' style="width: 25px;height: 25px;border-radius: 50%; vertical-align: middle;" alt="User Image">
+            {{userInfo.name}}
           </div>
           <el-dropdown-menu style="padding: 0px">
             <div>
               <div class="header-pic">
-                <img src="../../../static/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                <p>Administrator</p>
+                <img :src='userInfo.avatar' class="img-circle" alt="User Image">
+                <p>{{userInfo.name}}</p>
               </div>
               <div class="pull-left">
                 <router-link :to="{ path: '/resetPwd' }">
@@ -60,7 +60,7 @@
 </template>
 <script>
   import {mapGetters, mapActions, mapMutations} from 'vuex'
-  import * as types from "../../store/mutation-types"
+  import types from "../../store/mutation-types"
   import * as api from "../../api"
   import  auth from '../../auth'
   export default {
@@ -87,12 +87,16 @@
         }
       },
       logout(){
-        this.$http.get(api.TEST_DATA)
+        this.$http.get(api.LOGOUT)
           .then(res => {
             auth.logout();
             this.$http.defaults.headers.common['authSid'] = '';
             this.$router.push({path: '/login'});
-          })
+          }).catch(error => {
+            auth.logout();
+            this.$http.defaults.headers.common['authSid'] = '';
+            this.$router.push({path: '/login'});
+        })
       },
       ...mapMutations({
         toggleSidebar: types.TOGGLE_SIDEBAR,
@@ -121,9 +125,8 @@
       }
       this.count = 0;
       this.list = [];
-      this.$http.get(api.TEST_DATA)
+      this.$http.get(api.MSG_TOP_TEN)
         .then(res => {
-            res.data = res.data.messageList;
             if (res.data && res.data.length>0){
                 this.count = res.data.length;
                 this.list = res.data;

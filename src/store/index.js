@@ -1,9 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import * as types from "./mutation-types";
+import types from "./mutation-types";
 import defaultMenu from "./default-menu";
-// import app from './modules/app'
-// import menu from './modules/menu'
 import * as api from "../api";
 
 Vue.use(Vuex)

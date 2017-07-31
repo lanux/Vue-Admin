@@ -8,7 +8,7 @@
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
-    "mock": "node build/mock-server.js",
+    "mock": "babel-node build/mock-server.js --presets es2015,stage-2",
     "mockdev": "npm run dev & npm run mock"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.3",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.1.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.2",
@@ -39,8 +40,9 @@
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-plugin-transform-vue-jsx": "^3.5.0",
     "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.22.0",
-    "babel-preset-stage-2": "^6.22.0",
+    "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",

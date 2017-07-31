@@ -5,10 +5,10 @@
         <el-input v-model="form.name"></el-input>
       </el-form-item>
       <el-form-item label="登录用户名">
-        <el-input v-model="form.loginName"></el-input>
+        <el-input v-model="form.nickName"></el-input>
       </el-form-item>
       <el-form-item label="手机">
-        <el-input v-model="form.mobile"></el-input>
+        <el-input v-model="form.phone"></el-input>
       </el-form-item>
       <el-form-item label="邮箱">
         <el-input v-model="form.email"></el-input>
@@ -55,7 +55,7 @@
           id: null,
           no: '',
           name: '',
-          loginName: '',
+          nickName: '',
           phone: '',
           email: '',
           mobile: '',
