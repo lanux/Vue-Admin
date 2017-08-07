@@ -5,8 +5,8 @@
       <el-button type="primary" icon="plus" @click="newAdd">新增</el-button>
       <el-button type="danger" icon="delete" @click="batchDelete">删除</el-button>
     </h3>
-    <el-row slot="body">
-      <el-col :span="6">
+    <el-row slot="body" style="margin-bottom: 20px;" :gutter="24">
+      <el-col :span="6" :xs="24" :sm="24" :md="6" :lg="6" style="margin-bottom: 20px;">
         <el-tree v-if="resourceTree"
                  ref="resourceTree"
                  :data="resourceTree"
@@ -15,8 +15,8 @@
                  :render-content="renderContent"
                  @node-click="handleNodeClick" clearable node-key="id" :props="defaultProps"></el-tree>
       </el-col>
-      <el-col :span="18">
-        <el-card class="box-card" style="margin-left: 15px">
+      <el-col :span="18" :xs="24" :sm="24" :md="18" :lg="18">
+        <el-card class="box-card">
           <!--<div slot="header" class="clearfix">-->
           <!--<el-button type="primary" style="float: right;" @click="dialogFormVisible = true"><i class="el-icon-plus"></i></el-button>-->
           <!--&lt;!&ndash;<el-button type="primary" @click="editSelectedMenu" icon="edit"></el-button>&ndash;&gt;-->

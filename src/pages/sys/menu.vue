@@ -5,8 +5,8 @@
       <el-button type="primary" icon="plus" @click="newAdd">新增</el-button>
       <el-button type="danger" icon="delete" @click="batchDelete">删除</el-button>
     </h3>
-    <el-row slot="body">
-      <el-col :span="6">
+    <el-row slot="body" :gutter="24" style="margin-bottom: 20px;">
+      <el-col :span="6" :xs="24" :sm="24" :md="6" :lg="6" style="margin-bottom: 20px;">
         <el-tree v-if="menuTree"
                  ref="menuTree"
                  :data="menuTree"
@@ -15,8 +15,8 @@
                  :render-content="renderContent"
                  @node-click="handleNodeClick" clearable node-key="id" :props="defaultProps"></el-tree>
       </el-col>
-      <el-col :span="18">
-        <el-card class="box-card" style="margin-left: 15px">
+      <el-col :span="18" :xs="24" :sm="24" :md="18" :lg="18">
+        <el-card class="box-card">
           <div class="text item">
             <el-form :model="form" ref="form">
               <el-form-item label="父级" :label-width="formLabelWidth">
