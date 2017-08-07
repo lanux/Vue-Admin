@@ -20,6 +20,7 @@
   import sideMenu from './components/sideMenu.vue'
   import impHeader from "./pages/layout/header.vue"
   import impFooter from "./pages/layout/footer.vue"
+  import ScrollBar from 'vue2-scrollbar'
   import {mapGetters, mapActions,mapMutations} from 'vuex'
   import * as types from "./store/mutation-types"
   import 'animate.css'
@@ -29,7 +30,7 @@
     components: {
       sideMenu,
       impFooter,
-      impHeader
+      impHeader,
     },
     computed: {
         ...mapGetters({

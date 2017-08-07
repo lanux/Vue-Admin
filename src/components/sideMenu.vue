@@ -1,6 +1,18 @@
 <template>
   <aside class="main-sidebar animated" :class="{ showSlide: sidebar.show, hideSlide: !sidebar.show, expandSide:(!sidebar.collapsed||device.isMobile)}">
-    <div class="sidebar">
+    <scroll-bar class="vue-scrollbar" v-if="(!sidebar.collapsed||device.isMobile)">
+      <div class="sidebar">
+        <el-menu :default-active="onRoutes"
+                 :default-openeds="onRouteKeys"
+                 class="el-menu-vertical-demo"
+                 theme="dark" router :collapse="sidebar.collapsed&&!device.isMobile" @select="handleSelect">
+          <template v-for="item in menuList">
+            <sub-menu :param="item"></sub-menu>
+          </template>
+        </el-menu>
+      </div>
+    </scroll-bar>
+    <div class="sidebar" v-else>
       <el-menu :default-active="onRoutes"
                :default-openeds="onRouteKeys"
                class="el-menu-vertical-demo"
@@ -14,8 +26,10 @@
 </template>
 <script>
   import subMenu from "./subMenu.vue"
+  import ScrollBar from 'vue2-scrollbar'
   import {mapGetters, mapActions, mapMutations} from 'vuex'
   import * as types from "../store/mutation-types"
+  require("vue2-scrollbar/dist/style/vue2-scrollbar.css")
 
 
   export default {
@@ -26,7 +40,8 @@
       return {}
     },
     components: {
-      subMenu
+      subMenu,
+      ScrollBar,
     },
     computed: {
       ...mapGetters({
@@ -105,7 +120,7 @@
     top: 50px;
     left: 0;
     bottom: 0;
-    min-height: 100%;
+    height: calc(100vh - 50px);
     width: 44px;
     z-index: 810;
     -webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
@@ -134,6 +149,19 @@
 
   .main-sidebar .el-menu--collapse>.el-menu-item, .el-menu--collapse>.el-submenu>.el-submenu__title {
     padding-left: 13px !important;
+  }
+
+  .vue-scrollbar{
+    background-color: #324157 !important;
+    height: calc(100vh - 50px)
+  }
+
+  .vue-scrollbar__scrollbar-vertical .scrollbar, .vue-scrollbar__scrollbar-horizontal .scrollbar{
+    background: none !important;
+  }
+
+  .sidebar{
+    min-height: 450px;
   }
 
 
