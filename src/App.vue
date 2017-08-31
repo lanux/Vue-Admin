@@ -4,14 +4,14 @@
     <imp-header></imp-header>
     <side-menu></side-menu>
       <div class="content-wrapper" :class="{ slideCollapse: sidebar.collapsed,mobileSide:device.isMobile}">
-        <scroll-bar class="content-scrollbar">
+        <el-scrollbar tag="div" wrapClass="content-scrollbar">
           <section class="content">
             <transition mode="out-in" enter-active-class="fadeIn" leave-active-class="fadeOut" appear>
               <router-view></router-view>
             </transition>
             <imp-footer></imp-footer>
           </section>
-        </scroll-bar>
+        </el-scrollbar>
       </div>
   </div>
 </template>
@@ -22,11 +22,9 @@
   import sideMenu from './components/sideMenu.vue'
   import impHeader from "./pages/layout/header.vue"
   import impFooter from "./pages/layout/footer.vue"
-  import ScrollBar from 'vue2-scrollbar'
   import {mapGetters, mapActions,mapMutations} from 'vuex'
   import * as types from "./store/mutation-types"
   import 'animate.css'
-  require("vue2-scrollbar/dist/style/vue2-scrollbar.css")
 
   export default {
     name: 'app',
@@ -34,7 +32,7 @@
       sideMenu,
       impFooter,
       impHeader,
-      ScrollBar,
+//      ScrollBar,
     },
     computed: {
         ...mapGetters({
@@ -141,12 +139,7 @@
   }
 
   .content-scrollbar{
-    background: none !important;
     height: calc(100vh - 50px);
-  }
-
-  .vue-scrollbar__scrollbar-vertical:hover, .vue-scrollbar__scrollbar-horizontal:hover {
-     background: none;
   }
 
   .content-wrapper .content {

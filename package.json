@@ -12,8 +12,10 @@
   "dependencies": {
     "animate.css": "3.5.2",
     "axios": "^0.15.3",
+    "babel-polyfill": "^6.23.0",
     "echarts": "^3.5.1",
     "element-ui": "^1.4.0-beta.1",
+    "eventsource-polyfill": "^0.9.6",
     "font-awesome": "^4.7.0",
     "vue": "^2.2.6",
     "vue-core-image-upload": "^2.0.10",
@@ -22,7 +24,6 @@
     "vue-lazyload": "^1.0.1",
     "vue-progressbar": "^0.7.1",
     "vue-router": "^2.3.0",
-    "vue2-scrollbar": "^0.0.1",
     "vuex": "^2.2.1",
     "vuex-router-sync": "^4.1.2"
   },

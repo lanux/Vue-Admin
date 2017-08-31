@@ -1,6 +1,6 @@
 <template>
   <aside class="main-sidebar animated" :class="{ showSlide: sidebar.show, hideSlide: !sidebar.show, expandSide:(!sidebar.collapsed||device.isMobile)}">
-    <scroll-bar class="vue-scrollbar" v-if="(!sidebar.collapsed||device.isMobile)">
+    <el-scrollbar tag="div" wrapClass="vue-scrollbar" v-if="(!sidebar.collapsed||device.isMobile)">
       <div class="sidebar">
         <el-menu :default-active="onRoutes"
                  :default-openeds="onRouteKeys"
@@ -11,7 +11,7 @@
           </template>
         </el-menu>
       </div>
-    </scroll-bar>
+    </el-scrollbar>
     <div class="sidebar" v-else>
       <el-menu :default-active="onRoutes"
                :default-openeds="onRouteKeys"
@@ -26,10 +26,8 @@
 </template>
 <script>
   import subMenu from "./subMenu.vue"
-  import ScrollBar from 'vue2-scrollbar'
   import {mapGetters, mapActions, mapMutations} from 'vuex'
   import * as types from "../store/mutation-types"
-  require("vue2-scrollbar/dist/style/vue2-scrollbar.css")
 
 
   export default {
@@ -41,7 +39,6 @@
     },
     components: {
       subMenu,
-      ScrollBar,
     },
     computed: {
       ...mapGetters({
@@ -156,8 +153,8 @@
     height: calc(100vh - 50px)
   }
 
-  .vue-scrollbar__scrollbar-vertical .scrollbar, .vue-scrollbar__scrollbar-horizontal .scrollbar{
-    background: none !important;
+  .main-sidebar .el-scrollbar__bar.is-vertical{
+    display: none;
   }
 
   .sidebar{
