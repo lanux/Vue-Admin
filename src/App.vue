@@ -142,6 +142,10 @@
     height: calc(100vh - 50px);
   }
 
+  .content-wrapper .el-scrollbar__bar.is-vertical{
+    display: none;
+  }
+
   .content-wrapper .content {
     padding: 1.25rem;
   }
