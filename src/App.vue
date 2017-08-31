@@ -32,7 +32,6 @@
       sideMenu,
       impFooter,
       impHeader,
-//      ScrollBar,
     },
     computed: {
         ...mapGetters({
