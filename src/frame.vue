@@ -18,7 +18,7 @@
     -webkit-font-smoothing: antialiased;
     min-width: 300px;
     overflow-x: hidden;
-    overflow-y: scroll;
+    /*overflow-y: hidden;*/
     text-rendering: optimizeLegibility;
     box-sizing: border-box;
   }

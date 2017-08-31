@@ -3,14 +3,16 @@
     <vue-progress-bar></vue-progress-bar>
     <imp-header></imp-header>
     <side-menu></side-menu>
-    <div class="content-wrapper" :class="{ slideCollapse: sidebar.collapsed,mobileSide:device.isMobile}">
-      <section class="content">
-        <transition mode="out-in" enter-active-class="fadeIn" leave-active-class="fadeOut" appear>
-          <router-view></router-view>
-        </transition>
-      </section>
-      <imp-footer></imp-footer>
-    </div>
+      <div class="content-wrapper" :class="{ slideCollapse: sidebar.collapsed,mobileSide:device.isMobile}">
+        <scroll-bar class="content-scrollbar">
+          <section class="content">
+            <transition mode="out-in" enter-active-class="fadeIn" leave-active-class="fadeOut" appear>
+              <router-view></router-view>
+            </transition>
+            <imp-footer></imp-footer>
+          </section>
+        </scroll-bar>
+      </div>
   </div>
 </template>
 
@@ -24,6 +26,7 @@
   import {mapGetters, mapActions,mapMutations} from 'vuex'
   import * as types from "./store/mutation-types"
   import 'animate.css'
+  require("vue2-scrollbar/dist/style/vue2-scrollbar.css")
 
   export default {
     name: 'app',
@@ -31,6 +34,7 @@
       sideMenu,
       impFooter,
       impHeader,
+      ScrollBar,
     },
     computed: {
         ...mapGetters({
@@ -134,7 +138,15 @@
     transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
     margin-left: 230px;
     padding-top: 50px;
-    min-height: 100%;
+  }
+
+  .content-scrollbar{
+    background: none !important;
+    height: calc(100vh - 50px);
+  }
+
+  .vue-scrollbar__scrollbar-vertical:hover, .vue-scrollbar__scrollbar-horizontal:hover {
+     background: none;
   }
 
   .content-wrapper .content {
@@ -148,4 +160,5 @@
   .content-wrapper.mobileSide{
     margin-left: 0px;
   }
+
 </style>
