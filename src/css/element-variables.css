@@ -9,7 +9,7 @@
   --border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1);
   --color-transition-base: color .2s cubic-bezier(.645,.045,.355,1);
 
-  /* Colors
+  /* 修改主色调
   -------------------------- */
   --color-primary: #20a0ff;
 
