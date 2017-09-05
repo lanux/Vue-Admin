@@ -173,7 +173,7 @@
     position: fixed;
     min-width: 100%;
     box-shadow: 0 2px 3px hsla(0, 0%, 7%, .1), 0 0 0 1px hsla(0, 0%, 7%, .1);
-    z-index: 1030;
+    z-index: 9999;
     animation-name: slideInDown;
     animation-fill-mode: both;
   }

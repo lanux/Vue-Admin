@@ -1,6 +1,11 @@
 {
   "presets": ["es2015", "stage-2"],
-  "plugins": ["transform-runtime","transform-vue-jsx"],
+  "plugins": ["transform-runtime","transform-vue-jsx",["component", [
+    {
+      "libraryName": "element-ui",
+      "styleLibraryName": "~src/css/theme"
+    }
+  ]]],
   "comments": false,
   "env": {
     "test": {

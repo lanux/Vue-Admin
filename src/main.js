@@ -6,27 +6,20 @@ import Vue from "vue";
 import frame from "./frame.vue";
 import VueRouter from "vue-router";
 import routeConfig from "./router";
-// import NProgress from "vue-nprogress";
 import {sync} from "vuex-router-sync";
 import store from "./store";
 import axios from "axios";
 import filters from "./filters";
 import VueProgressBar from "vue-progressbar";
 import {TOGGLE_SIDEBAR} from "./store/mutation-types";
-import VueLazyload from "vue-lazyload";
 import auth from "./auth";
 import Element from "element-ui";
-import "element-ui/lib/theme-default/index.css";
+// import 'element-ui/lib/theme-default/index.css';
+import "./css/theme/index.css";
 import ImpPanel from "./components/panel.vue";
 
 
 Vue.use(Element);
-
-// or with options
-Vue.use(VueLazyload, {
-  preLoad: 1.3,
-  attempt: 1
-})
 
 function getBaseUrl(url) {
   var reg = /^((\w+):\/\/([^\/:]*)(?::(\d+))?)(.*)/;
@@ -45,12 +38,6 @@ Vue.axios = axios
 
 //加载路由中间件
 Vue.use(VueRouter)
-// const options = {
-//   latencyThreshold: 200, // Number of ms before progressbar starts showing, default: 100,
-//   router: true, // Show progressbar when navigating routes, default: true
-//   http: true // Show progressbar when doing Vue.http and Vue.axios default: true
-// };
-// Vue.use(NProgress, options)
 
 Vue.component(ImpPanel.name, ImpPanel);
 
@@ -110,7 +97,6 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   });
 
-// const nprogress = new NProgress({parent: '.nprogress-container'})
 
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
@@ -118,7 +104,6 @@ Object.keys(filters).forEach(key => {
 
 new Vue({
   store,
-  // nprogress,
   router,
   el: "#root",
   render: h => h(frame)
