@@ -23,6 +23,16 @@ assetsPublicPath: 'Your path name';
 export const CONTEXT = 'Your path name';
 ```
 
+
+```
+cnpm i json-server -D
+cnpm i json-server -S
+npm outdated：检查包是否已经过时，此命令会列出所有已经过时的包，可以及时进行包的更新
+npm update moduleName：更新node模块
+npm uninstall moudleName：卸载node模块
+
+```
+
 ## 页面截图
 
 <p><img src="https://raw.githubusercontent.com/lanux/Vue-Admin/master/static/data/login.png" /></p>
