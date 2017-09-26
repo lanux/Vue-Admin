@@ -198,9 +198,8 @@
         }
       },
       load(){
-        this.$http.get(api.TEST_DATA)
+        this.$http.get(api.SYS_RESOURCE_LIST)
           .then(res=>{
-            res.data = res.data.resourceList;
             this.resourceTree = [];
             this.resourceTree.push(...res.data)
           }).catch((error) => {

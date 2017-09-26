@@ -5,7 +5,7 @@
         <el-menu :default-active="onRoutes"
                  :default-openeds="onRouteKeys"
                  class="el-menu-vertical-demo"
-                 theme="dark" router :collapse="sidebar.collapsed&&!device.isMobile" @select="handleSelect">
+                 theme="light" router :collapse="sidebar.collapsed&&!device.isMobile" @select="handleSelect">
           <template v-for="item in menuList">
             <sub-menu :param="item"></sub-menu>
           </template>
@@ -16,7 +16,7 @@
       <el-menu :default-active="onRoutes"
                :default-openeds="onRouteKeys"
                class="el-menu-vertical-demo"
-               theme="dark" router :collapse="sidebar.collapsed&&!device.isMobile" @select="handleSelect">
+               theme="light" router :collapse="sidebar.collapsed&&!device.isMobile" @select="handleSelect">
         <template v-for="item in menuList">
           <sub-menu :param="item"></sub-menu>
         </template>
@@ -112,7 +112,7 @@
   }
 
   .main-sidebar {
-    background-color: #324157;
+    background-color: #ffffff;
     position: fixed;
     top: 50px;
     left: 0;
@@ -128,6 +128,12 @@
 
   .expandSide {
     width: 230px;
+  }
+  .el-menu,.el-submenu .el-menu{
+    background-color: #ffffff;
+  }
+  .el-menu-item:hover,.el-submenu .el-menu-item:hover,.el-submenu__title:hover{
+    background-color: #eeeeee;
   }
 
   .el-menu-vertical-demo .el-submenu .el-menu-item {
@@ -149,7 +155,7 @@
   }
 
   .vue-scrollbar{
-    background-color: #324157 !important;
+    background-color: #ffffff !important;
     height: calc(100vh - 50px)
   }
 

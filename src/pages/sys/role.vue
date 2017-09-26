@@ -199,9 +199,8 @@
         })
       },
       load(){
-        this.$http.get(api.TEST_DATA)
+        this.$http.get(api.SYS_ROLE_LIST)
           .then(res => {
-              res.data = res.data.roleList;
             this.roleTree = [];
             this.roleTree.push(...res.data)
           }).catch((error) => {

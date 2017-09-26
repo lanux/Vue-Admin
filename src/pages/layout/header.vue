@@ -18,7 +18,7 @@
           <el-dropdown-menu>
             <ul class="message-list">
             <li v-for="item in list"><!-- start message -->
-            <router-link :to="{path:'/img/process/result',query:{id:item.entityId}}">
+            <router-link :to="{path:'/sys/message',query:{id:item.id}}">
             <p>{{item.title}}</p>
             </router-link>
             </li>
@@ -143,6 +143,7 @@
 
   .main-header a {
     text-decoration: none;
+    color: #108ee9;
   }
 
   .main-header {
@@ -152,6 +153,7 @@
     z-index: 9999;
     animation-name: slideInDown;
     animation-fill-mode: both;
+    color: #108ee9;
   }
 
   .main-header .navbar .sidebar-toggle {
@@ -168,7 +170,7 @@
   }
 
   .main-header .navbar .sidebar-toggle:hover {
-    color: #fff;
+    /*color: #fff;*/
   }
 
   .main-header .logo {
@@ -208,8 +210,9 @@
     border: none;
     min-height: 50px;
     border-radius: 0;
-    background-color: #3c8dbc;
-    color: #ffffff;
+    /*background-color: #3c8dbc;*/
+    background-color: #ffffff;
+    /*color: #ffffff;*/
   }
 
   .layout-top-nav .main-header .navbar {
@@ -226,31 +229,31 @@
   }
 
   .main-header .navbar .sidebar-toggle {
-    color: #ffffff;
+    /*color: #ffffff;*/
     display: block;
   }
 
   .main-header .navbar .sidebar-toggle:hover {
-    color: #f6f6f6;
+    /*color: #f6f6f6;*/
     background: rgba(0, 0, 0, 0.1);
   }
 
   .main-header .navbar .sidebar-toggle {
-    color: #fff;
+    /*color: #fff;*/
   }
 
   .main-header .navbar .sidebar-toggle:hover {
-    background-color: #367fa9;
+    /*background-color: #367fa9;*/
   }
 
   .main-header .logo {
-    background-color: #367fa9;
-    color: #ffffff;
+    /*background-color: #367fa9;*/
+    /*color: #ffffff;*/
     border-bottom: 0 solid transparent;
   }
 
   .main-header .logo:hover {
-    background-color: #357ca5;
+    /*background-color: #357ca5;*/
   }
 
   @media (max-width: 800px) {
@@ -277,8 +280,8 @@
     display: none;
   }
   .main-header.closeLogo .sidebar-toggle {
-    background-color: #367fa9;
-    color: #f6f6f6;
+    /*background-color: #367fa9;*/
+    /*color: #f6f6f6;*/
     background: rgba(0, 0, 0, 0.1);
   }
 
@@ -296,7 +299,7 @@
 
   .navbar-custom-menu .el-dropdown-link{
     cursor: pointer;
-    color: #ffffff;
+    /*color: #ffffff;*/
     height: 50px;
     padding: 13px 5px;
     min-width: 50px;
@@ -324,7 +327,7 @@
 
   .el-dropdown-menu .header-pic{
     text-align: center;
-    background-color: #3c8dbc;
+    background-color: #108ee9;
     padding: 20px;
   }
   .el-dropdown-menu .header-pic img{

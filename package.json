@@ -15,7 +15,7 @@
     "animate.css": "3.5.2",
     "axios": "^0.16.2",
     "babel-polyfill": "^6.23.0",
-    "echarts": "^3.7.1",
+    "echarts": "^3.5.1",
     "element-ui": "^1.4.3",
     "eventsource-polyfill": "^0.9.6",
     "font-awesome": "^4.7.0",

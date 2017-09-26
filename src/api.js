@@ -39,11 +39,6 @@ export const SYS_USER_PAGE = CONTEXT + '/sys/user/page';
 export const SYS_USER_ROLE = CONTEXT + '/sys/user/roleIds';
 export const SYS_SET_USER_ROLE = CONTEXT + '/sys/user/setRoles';
 
-
-export const UPLOAD_FORM_FILE = CONTEXT + '/upload/imageUpload';
-export const UPLOAD_FORM_FILE_TEMP = CONTEXT + '/upload/formFile';
-export const UPLOAD_FORM_FILE_BATCH = CONTEXT + '/upload/batch';
-
 export const MSG_TOP_TEN = CONTEXT + '/messageList';
 export const TEST_DATA = CONTEXT + '/static/data/data.json';
 

@@ -213,9 +213,9 @@
         }
       },
       load(){
-        this.$http.get(api.TEST_DATA)
+        this.$http.get(api.SYS_MENU_LIST)
           .then(res => {
-            this.menuTree = res.data.menuList;
+            this.menuTree = res.data;
           }).catch((error) => {
            console.log(error)
         })
