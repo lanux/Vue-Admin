@@ -1,7 +1,7 @@
 <template>
   <header class="main-header animated" :class="{closeLogo:sidebar.collapsed,mobileLogo:device.isMobile}">
     <a href="#" class="logo">
-      <span class="logo-lg">&nbsp;&nbsp; <b>Vue-Admin</b></span>
+      <span class="logo-lg"><i class="fa fa-diamond"></i>&nbsp; <b>Vue-Admin</b></span>
     </a>
     <nav class="navbar">
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"
@@ -169,8 +169,8 @@
     content: "\f03b";
   }
 
-  .main-header .navbar .sidebar-toggle:hover {
-    /*color: #fff;*/
+  .main-header {
+    background-color: #ffffff;
   }
 
   .main-header .logo {
@@ -193,9 +193,6 @@
 
   .main-header .logo .logo-lg {
     display: block;
-    background-image: url("../../../static/img/foot_icon.png");
-    background-repeat: no-repeat;
-    background-position: 15px -6px;
     height: 38px;
     line-height: 38px;
     margin-top: 6px;
@@ -210,9 +207,7 @@
     border: none;
     min-height: 50px;
     border-radius: 0;
-    /*background-color: #3c8dbc;*/
     background-color: #ffffff;
-    /*color: #ffffff;*/
   }
 
   .layout-top-nav .main-header .navbar {
@@ -222,39 +217,23 @@
 
   body.hold-transition .main-header .navbar,
   body.hold-transition .main-header .logo {
-    /* Fix for IE */
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
   }
 
   .main-header .navbar .sidebar-toggle {
-    /*color: #ffffff;*/
     display: block;
   }
 
   .main-header .navbar .sidebar-toggle:hover {
-    /*color: #f6f6f6;*/
-    background: rgba(0, 0, 0, 0.1);
-  }
-
-  .main-header .navbar .sidebar-toggle {
-    /*color: #fff;*/
-  }
-
-  .main-header .navbar .sidebar-toggle:hover {
-    /*background-color: #367fa9;*/
+    background: #f9f9f9;
   }
 
   .main-header .logo {
-    /*background-color: #367fa9;*/
-    /*color: #ffffff;*/
     border-bottom: 0 solid transparent;
   }
 
-  .main-header .logo:hover {
-    /*background-color: #357ca5;*/
-  }
 
   @media (max-width: 800px) {
 
@@ -280,9 +259,7 @@
     display: none;
   }
   .main-header.closeLogo .sidebar-toggle {
-    /*background-color: #367fa9;*/
-    /*color: #f6f6f6;*/
-    background: rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
   }
 
   .main-header.closeLogo .navbar .sidebar-toggle:before {
@@ -299,14 +276,13 @@
 
   .navbar-custom-menu .el-dropdown-link{
     cursor: pointer;
-    /*color: #ffffff;*/
     height: 50px;
     padding: 13px 5px;
     min-width: 50px;
     text-align: center;
   }
   .navbar-custom-menu .el-dropdown-link:hover{
-    background: rgba(0,0,0,.1);
+    background: #f9f9f9;
   }
   .message-list {
     list-style: none;
