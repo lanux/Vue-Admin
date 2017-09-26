@@ -1,18 +1,13 @@
 <template>
   <header class="main-header animated" :class="{closeLogo:sidebar.collapsed,mobileLogo:device.isMobile}">
-
-    <!-- Logo -->
     <a href="#" class="logo">
       <span class="logo-lg">&nbsp;&nbsp; <b>Vue-Admin</b></span>
     </a>
-    <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar">
-      <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"
          @click.stop.prevent="toggleMenu(!sidebar.collapsed,device.isMobile)">
         <span class="sr-only">Toggle navigation</span>
       </a>
-      <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <el-dropdown class="navbar-dropdown" trigger="click">
           <div class="el-dropdown-link" style="height: auto;line-height: inherit">

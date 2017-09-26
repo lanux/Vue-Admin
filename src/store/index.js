@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import types from "./mutation-types";
 import defaultMenu from "./default-menu";
 import * as api from "../api";
+import { getCurrentMenu } from '../common/utils'
 
 Vue.use(Vuex)
 
@@ -15,6 +16,7 @@ const store = new Vuex.Store({
     sidebar: state => state.sidebar,
     userInfo:state => state.userInfo,
     device:state => state.device,
+    currentMenus:state => state.currentMenus,
   },
   // modules: {
   //   app,
@@ -30,7 +32,8 @@ const store = new Vuex.Store({
     device: {
       isMobile: false
     },
-    userInfo:{name:'佚名'}
+    userInfo:{name:'佚名'},
+    currentMenus:[],
   },
   mutations: {
     //只能同步的函数
@@ -42,6 +45,9 @@ const store = new Vuex.Store({
     },
     [types.LOAD_MENU] (state, menu) {
       state.menuList = menu;
+    },
+    [types.LOAD_CURRENT_MENU] (state, menu) {
+      state.currentMenus = menu;
     },
     [types.SET_USER_INFO] (state, info) {
       state.userInfo = info;
@@ -63,6 +69,10 @@ const store = new Vuex.Store({
       Vue.axios.get(api.TEST_DATA).then(res => {
         commit(types.LOAD_MENU, res.data.menuList);
       }).catch(exp => commit(types.LOAD_MENU, defaultMenu));
+    },
+    changeCurrentMenu: ({state,commit},{path,matched,fullPath}) => {
+      const a = getCurrentMenu(fullPath,state.menuList);
+      commit(types.LOAD_CURRENT_MENU, a.reverse());
     }
   },
 })

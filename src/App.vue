@@ -7,10 +7,9 @@
         <el-scrollbar tag="div" wrapClass="content-scrollbar">
           <section class="content">
             <el-breadcrumb separator="/" style="margin-bottom: 20px;">
-              <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-              <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-              <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-              <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+              <template v-for="child in currentMenus">
+                <el-breadcrumb-item :to="{ path: child.href }">{{child.name}}</el-breadcrumb-item>
+              </template>
             </el-breadcrumb>
             <transition mode="out-in" enter-active-class="fadeIn" leave-active-class="fadeOut" appear>
               <router-view></router-view>
@@ -43,7 +42,9 @@
         ...mapGetters({
             sidebar: 'sidebar',
             device:'device',
-        })
+            currentMenus:'currentMenus',
+        }),
+
     },
     data: function () {
       return {
@@ -58,6 +59,9 @@
           toggleSidebar: types.TOGGLE_SIDEBAR,
           toggleSidebarShow: types.TOGGLE_SIDEBAR_SHOW,
       }),
+      ...mapActions({
+        changeCurrentMenu: 'changeCurrentMenu' // 映射 this.changeCurrentMenu() 为 this.$store.dispatch('changeCurrentMenu')
+      })
     },
     watch: {
       '$route': function (to, from) {
@@ -98,6 +102,7 @@
 //          // parse meta tags
 //          this.$Progress.parseMeta(meta)
 //        }
+        this.$store.dispatch('changeCurrentMenu',to);
         //  start the progress bar
         this.$Progress.start()
         //  continue to next page
