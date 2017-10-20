@@ -14,7 +14,6 @@
     </el-scrollbar>
     <div class="sidebar" v-else>
       <el-menu :default-active="onRoutes"
-               :default-openeds="onRouteKeys"
                class="el-menu-vertical-demo"
                theme="light" router :collapse="sidebar.collapsed&&!device.isMobile" @select="handleSelect">
         <template v-for="item in menuList">
@@ -27,7 +26,7 @@
 <script>
   import subMenu from "./subMenu.vue"
   import {mapGetters, mapActions, mapMutations} from 'vuex'
-  import * as types from "../store/mutation-types"
+  import types from "../store/mutation-types"
 
 
   export default {

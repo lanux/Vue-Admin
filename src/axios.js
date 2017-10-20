@@ -1,31 +1,38 @@
-/**
- * Created by lanux on 2017/3/9.
- */
 import axios from "axios";
-
-// 适配vue-resource
+import auth from "./auth";
+import {getBaseUrl} from "./common/utils"
 
 const instance = axios.create();
-instance.interceptors.request.use(config => {
-//Serialize.decode(config);
-  return config;
-});
-instance.interceptors.response.use(response => {
-  return response.data;
-}, err => {
-  if (err.response) {
-    axios.post('/v1/error', err.response);
-    return Promise.reject(err.response.data);
-  }
-  return Promise.reject({code: 1024, message: err.message});
-});
 
+instance.interceptors.response.use(
+  response => {
+    if (response.data && response.data.code) {
+      if (response.data.code === '2001') {
+        auth.logout()
+      }
+    }
+    return response;
+  },
+  error => {
+    if (error.response) {
+      //全局ajax错误信息提示
+      Element.MessageBox({type:"error",message:error.response.data,title:"温馨提示"});
+    }
+    return Promise.reject(error);
+  });
 
 function plugin(Vue)
 {
   if (plugin.installed) {
     return;
   }
+  // instance.defaults.baseURL = 'https://www.baidu.com';
+  instance.defaults.baseURL = getBaseUrl(window.location.href);
+  instance.defaults.headers.common['authUid'] = auth.getUid();
+  instance.defaults.headers.common['authSid'] = auth.getSid();
+
+  Vue.prototype.$http = instance
+  Vue.axios = instance
   Vue.http = instance;
 }
 

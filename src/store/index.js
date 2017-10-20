@@ -3,7 +3,7 @@ import Vuex from "vuex";
 import types from "./mutation-types";
 import defaultMenu from "./default-menu";
 import * as api from "../api";
-import { getCurrentMenu } from '../common/utils'
+import { getCurrentMenu, getSessionKey } from '../common/utils'
 
 Vue.use(Vuex)
 
@@ -18,16 +18,12 @@ const store = new Vuex.Store({
     device:state => state.device,
     currentMenus:state => state.currentMenus,
   },
-  // modules: {
-  //   app,
-  //   menu
-  // },
   state: {
     loading: false,
     menuList: {},
     sidebar: {
-      collapsed: false,
-      show:true,
+      collapsed: getSessionKey('state.sidebar.collapsed','false')==='true',
+      show: getSessionKey('state.sidebar.show','true')==='true',
     },
     device: {
       isMobile: false
@@ -55,12 +51,14 @@ const store = new Vuex.Store({
     [types.TOGGLE_SIDEBAR] (state, collapsed) {
       if (collapsed == null) collapsed = !state.sidebar.collapsed;
       state.sidebar.collapsed = collapsed;
+      window.sessionStorage.setItem("state.sidebar.collapsed",collapsed)
     },
     [types.TOGGLE_SIDEBAR_SHOW] (state,show) {
       if (show == null) state.sidebar.show = !state.sidebar.show;
       else{
         state.sidebar.show = show;
       }
+      window.sessionStorage.setItem("state.sidebar.show",state.sidebar.show)
     },
   }, actions: {
     //异步的函数
