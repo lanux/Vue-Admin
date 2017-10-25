@@ -2,6 +2,7 @@ import 'babel-polyfill'
 import axios from "axios";
 import auth from "./auth";
 import {getBaseUrl} from "./common/utils"
+import {MessageBox} from "element-ui";
 
 const instance = axios.create();
 
@@ -17,9 +18,9 @@ instance.interceptors.response.use(
   error => {
     if (error.response) {
       //全局ajax错误信息提示
-      //Element.MessageBox({type:"error",message:error.response.data,title:"温馨提示"});
+      //MessageBox({type:"error",message:error.response.data,title:"温馨提示",});
     }
-    return Promise.reject(error);
+    //return Promise.reject(error);
   });
 
 function plugin(Vue)

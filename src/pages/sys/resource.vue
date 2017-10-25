@@ -70,6 +70,7 @@
   import selectTree from "../../components/selectTree.vue"
   import treeter from "../../components/treeter"
   import merge from 'element-ui/src/utils/merge';
+  import defaultValue from "./default";
 
   import * as api from "../../api"
 
@@ -204,6 +205,8 @@
             this.resourceTree.push(...res.data)
           }).catch((error) => {
           console.log(error)
+          this.resourceTree = [];
+          this.resourceTree.push(...defaultValue.resource)
         })
       }
     },

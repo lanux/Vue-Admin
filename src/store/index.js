@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import types from "./mutation-types";
-import defaultMenu from "./default-menu";
+import defaultValue from "../pages/sys/default";
 import * as api from "../api";
 import { getCurrentMenu, getSessionKey } from '../common/utils'
 
@@ -66,7 +66,7 @@ const store = new Vuex.Store({
     loadMenuList: ({commit}) => {
       Vue.axios.get(api.SYS_MENU_LIST).then(res => {
         commit(types.LOAD_MENU, res.data);
-      }).catch(exp => commit(types.LOAD_MENU, defaultMenu));
+      }).catch(exp => commit(types.LOAD_MENU, defaultValue.menuList));
     },
     changeCurrentMenu: ({state,commit},{path,matched,fullPath}) => {
       const a = getCurrentMenu(fullPath,state.menuList);

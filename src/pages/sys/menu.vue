@@ -76,8 +76,10 @@
   import selectTree from "../../components/selectTree.vue"
   import treeter from "../../components/treeter"
   import merge from 'element-ui/src/utils/merge';
+  import defaultValue from "./default";
 
   import * as api from "../../api"
+
 
   export default {
     mixins: [treeter],
@@ -164,7 +166,6 @@
               this.load();
             }).catch(e => {
              this.$message('操作成功');
-            console.log(checkKeys);
             this.batchDeleteFromTree(this.menuTree, checkKeys);
           })
         });
@@ -184,7 +185,7 @@
                 this.maxId += 1;
                 this.$message('操作成功');
                 this.form.id = this.maxId;
-                var  ddd = {
+                var ddd = {
                   id: this.form.id,
                   name: this.form.name,
                   sort: this.form.sort,
@@ -196,7 +197,6 @@
                   desc: this.form.desc,
                   children:[]
                 }
-                console.log(ddd)
                 this.appendTreeNode(this.menuTree, ddd);
             this.menuTree.push({});
             this.menuTree.pop();
@@ -218,6 +218,7 @@
             this.menuTree = res.data;
           }).catch((error) => {
            console.log(error)
+           this.menuTree = defaultValue.menuList;
         })
       }
     },

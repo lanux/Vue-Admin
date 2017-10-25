@@ -119,6 +119,7 @@
   import panel from "../../components/panel.vue"
   import * as api from "../../api"
   import testData from "../../../static/data/data.json"
+  import defaultValue from "./default";
 
   export default {
     components: {
@@ -159,9 +160,12 @@
         this.currentRow = row;
         this.dialogVisible = true;
         if (this.roleTree.length <= 0) {
-          this.$http.get( api.TEST_DATA + "?selectChildren=true")
+          this.$http.get( api.SYS_ROLE_LIST + "?selectChildren=true")
             .then(res => {
               this.roleTree = res.data.roleList
+            })
+            .catch(err=>{
+              this.roleTree = defaultValue.roleList
             })
         }
         this.$http.get(api.SYS_USER_ROLE + "?id=" + row.id)
@@ -194,16 +198,14 @@
         });
       },
       loadData(){
-//        var d = {"offset":0,"limit":2147483647,"total":1,"size":10,"pages":1,"current":1,"searchCount":true,"optimizeCount":false,"orderByField":null,"records":[
-//            {"id":1,"delFlag":0,"companyId":1,"officeId":2,"loginName":"admin","password":"",
-//              "no":"0001","name":"系统管理员","email":"lanux@foxmail.com","phone":"731","mobile":"13769999998",
-//              "userType":"1","photo":null,"loginIp":"127.0.0.1","loginDate":1453188598000,"loginFlag":"1",
-//              "remarks":"最高管理员","status":1,"token":null}],"condition":{},"asc":true,"offsetCurrent":0};
-//        this.tableData.rows = d.records;
           this.$http.get(api.SYS_USER_PAGE + "?key=" + this.searchKey + "&pageSize=" + this.tableData.pagination.pageSize + "&pageNo=" + this.tableData.pagination.pageNo)
           .then(res => {
             this.tableData.rows = res.data.records;
             this.tableData.pagination.total = res.data.total;
+          }).catch(err=>{
+            debugger
+            this.tableData.rows = defaultValue.userList;
+            this.tableData.pagination.total = 99;
           });
       }
     },
