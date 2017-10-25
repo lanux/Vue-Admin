@@ -7,7 +7,7 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '',
+    assetsPublicPath: '/',
     // assetsPublicPath: '/Vue-Admin/',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
@@ -27,7 +27,7 @@ module.exports = {
     port: 9000,
     autoOpenBrowser: false,
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '',
     proxyTable: {
       // http://localhost:9000/api/menuList => http://localhost:3000/menuList
       '/api': {

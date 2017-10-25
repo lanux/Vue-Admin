@@ -1,16 +1,31 @@
 {
-  "presets": ["stage-2"],
-  "plugins": ["transform-runtime","transform-vue-jsx",["component", [
-    {
-      "libraryName": "element-ui",
-      "styleLibraryName": "~src/css/theme"
-    }
-  ]]],
+  "presets": [
+    "es2015",
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-vue-jsx",
+    [
+      "component",
+      [
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "~src/css/theme"
+        }
+      ]
+    ]
+  ],
   "comments": false,
   "env": {
     "test": {
-      "presets": ["stage-2"],
-      "plugins": [ "istanbul" ]
+      "presets": [
+        "es2015",
+        "stage-0"
+      ],
+      "plugins": [
+        "istanbul"
+      ]
     }
   }
 }

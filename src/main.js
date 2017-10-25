@@ -9,7 +9,7 @@ import filters from "./filters";
 import VueProgressBar from "vue-progressbar";
 import Element from "element-ui";
 // import 'element-ui/lib/theme-default/index.css';
-import "./css/theme/index.css";
+// import "./css/theme/index.css";
 import ImpPanel from "./components/panel.vue";
 
 Vue.use(axios);

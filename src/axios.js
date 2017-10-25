@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import axios from "axios";
 import auth from "./auth";
 import {getBaseUrl} from "./common/utils"
@@ -16,7 +17,7 @@ instance.interceptors.response.use(
   error => {
     if (error.response) {
       //全局ajax错误信息提示
-      Element.MessageBox({type:"error",message:error.response.data,title:"温馨提示"});
+      //Element.MessageBox({type:"error",message:error.response.data,title:"温馨提示"});
     }
     return Promise.reject(error);
   });

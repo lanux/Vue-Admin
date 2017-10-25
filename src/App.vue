@@ -22,7 +22,7 @@
 </template>
 
 <script>
-
+  import 'babel-polyfill'
   import Vue from 'vue'
   import sideMenu from './components/sideMenu.vue'
   import impHeader from "./pages/layout/header.vue"
