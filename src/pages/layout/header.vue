@@ -33,7 +33,7 @@
           <el-dropdown-menu style="padding: 0px">
             <div>
               <div class="header-pic">
-                <img :src='userInfo.avatar' class="img-circle" alt="User Image">
+                <img :src='userInfo.avatar' class="img-circle" alt="User Image" >
                 <p>{{userInfo.name}}</p>
               </div>
               <div class="pull-left">
@@ -252,10 +252,14 @@
 
   }
   .main-header.closeLogo .navbar{
-    margin-left: 0px;
+    margin-left: 44px;
   }
 
   .main-header.closeLogo .logo{
+    width: 44px;
+    padding: 0 8px;
+  }
+  .main-header.closeLogo .logo .logo-lg b{
     display: none;
   }
   .main-header.closeLogo .sidebar-toggle {

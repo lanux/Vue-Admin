@@ -24,10 +24,11 @@
         style="width: 100%"
         v-loading="listLoading"
         @selection-change="handleSelectionChange">
+        <!--checkbox 适当加宽，否则IE下面有省略号 https://github.com/ElemeFE/element/issues/1563-->
         <el-table-column
           prop="id"
           type="selection"
-          width="45">
+          width="50">
         </el-table-column>
         <el-table-column
           label="照片" width="76">

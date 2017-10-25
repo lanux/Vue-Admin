@@ -49,7 +49,8 @@ module.exports = {
           resolve('src'),
           resolve('test'),
           resolve('/node_modules/.1.4.8@element-ui/src'),
-          resolve('/node_modules/.1.4.8@element-ui/packages')
+          resolve('/node_modules/.1.4.8@element-ui/packages'),
+          resolve('/node_modules/.4.3.0@vuex-router-sync')
         ]
       },
       {
