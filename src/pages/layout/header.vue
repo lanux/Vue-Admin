@@ -143,7 +143,7 @@
 
   .main-header a {
     text-decoration: none;
-    color: #108ee9;
+    color: #48576a;
   }
 
   .main-header {
@@ -153,7 +153,7 @@
     z-index: 9999;
     animation-name: slideInDown;
     animation-fill-mode: both;
-    color: #108ee9;
+    color: #48576a;
   }
 
   .main-header .navbar .sidebar-toggle {
@@ -317,6 +317,7 @@
     border: 3px solid;
     border-color: transparent;
     border-color: hsla(0,0%,100%,.2);
+    background-color: #108ee9;
   }
   .el-dropdown-menu .header-pic p{
     font-size: 1.5rem;
