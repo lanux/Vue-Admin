@@ -1,5 +1,5 @@
 import 'babel-polyfill'
-import 'eventsource-polyfill'
+// import 'eventsource-polyfill'
 import Vue from "vue";
 import frame from "./frame.vue";
 import router from "./router";
