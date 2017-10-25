@@ -285,6 +285,10 @@
     min-width: 50px;
     text-align: center;
   }
+  .navbar-custom-menu .el-dropdown-link img{
+    background-color: #108ee9;
+  }
+
   .navbar-custom-menu .el-dropdown-link:hover{
     background: #f9f9f9;
   }

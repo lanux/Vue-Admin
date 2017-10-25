@@ -32,7 +32,7 @@
         </el-table-column>
         <el-table-column
           label="照片" width="76">
-          <template scope="scope">
+          <template slot-scope="scope">
             <img :src='scope.row.avatar' style="height: 35px;vertical-align: middle;" alt="">
           </template>
         </el-table-column>
@@ -50,12 +50,12 @@
         </el-table-column>
         <el-table-column
           label="状态">
-          <template scope="scope">
+          <template slot-scope="scope">
             {{ scope.row.status===1 ? '已激活' : '未激活' }}
           </template>
         </el-table-column>
         <el-table-column label="操作" width="285">
-          <template scope="scope">
+          <template slot-scope="scope">
             <el-button
               size="small"
               type="default"
