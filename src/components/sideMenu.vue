@@ -4,7 +4,7 @@
       <div class="sidebar">
         <el-menu :default-active="onRoutes"
                  :default-openeds="onRouteKeys"
-                 class="el-menu-vertical-demo"
+                 class="el-menu-style"
                  theme="light" router :collapse="sidebar.collapsed&&!device.isMobile" @select="handleSelect">
           <template v-for="item in menuList">
             <sub-menu :param="item"></sub-menu>
@@ -14,7 +14,7 @@
     </el-scrollbar>
     <div class="sidebar" v-else>
       <el-menu :default-active="onRoutes"
-               class="el-menu-vertical-demo"
+               class="el-menu-style"
                theme="light" router :collapse="sidebar.collapsed&&!device.isMobile" @select="handleSelect">
         <template v-for="item in menuList">
           <sub-menu :param="item"></sub-menu>
@@ -128,19 +128,23 @@
   .expandSide {
     width: 230px;
   }
-  .el-menu,.el-submenu .el-menu{
+
+  .el-menu-style,
+  .el-menu-style .el-menu{
     background-color: #ffffff;
   }
-  .el-menu-item:hover,.el-submenu .el-menu-item:hover,.el-submenu__title:hover{
-    background-color: #eeeeee;
+  .el-menu-style .el-menu-item:hover,
+  .el-menu-style .el-submenu__title:hover{
+    background-color: #eeeeee !important;
   }
 
-  .el-menu-vertical-demo .el-submenu .el-menu-item {
+  .el-menu-style .el-submenu .el-menu-item {
     height: 45px;
     line-height: 45px;
   }
 
-  .el-menu-vertical-demo .el-menu-item, .el-menu-vertical-demo .el-submenu__title {
+  .el-menu-style .el-menu-item,
+  .el-menu-style .el-submenu__title {
     height: 45px;
     line-height: 45px;
   }
@@ -149,7 +153,8 @@
     width: 44px;
   }
 
-  .main-sidebar .el-menu--collapse>.el-menu-item, .el-menu--collapse>.el-submenu>.el-submenu__title {
+  .main-sidebar .el-menu--collapse>.el-menu-item,
+  .main-sidebar .el-menu--collapse>.el-submenu>.el-submenu__title {
     padding-left: 13px !important;
   }
 
