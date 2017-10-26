@@ -1,5 +1,5 @@
-export const CONTEXT = './api';
-// export const CONTEXT = './Vue-Admin';
+// export const CONTEXT = './api';
+export const CONTEXT = './Vue-Admin';
 
 export const LOGIN = CONTEXT + '/login';
 export const LOGOUT = CONTEXT + '/logout';

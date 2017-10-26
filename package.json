@@ -8,7 +8,7 @@
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
-    "mock": "babel-node build/mock-server.js --presets es2015,stage-2",
+    "mock": "babel-node build/mock-server.js --presets es2015,stage-0",
     "mockdev": "npm run dev & npm run mock"
   },
   "dependencies": {
@@ -48,8 +48,6 @@
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.7",
-    "element-theme": "^0.7.2",
-    "element-theme-default": "^1.4.3",
     "errorhandler": "^1.5.0",
     "eslint": "^4.6.1",
     "eslint-config-standard": "^10.2.1",
@@ -94,15 +92,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "element-theme": {
-    "browsers": [
-      "ie > 9",
-      "last 2 versions"
-    ],
-    "out": "./src/css/theme",
-    "config": "./src/css/element-variables.css",
-    "theme": "element-theme-default",
-    "minimize": false
-  }
+  ]
 }

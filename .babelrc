@@ -5,16 +5,7 @@
   ],
   "plugins": [
     "transform-runtime",
-    "transform-vue-jsx",
-    [
-      "component",
-      [
-        {
-          "libraryName": "element-ui",
-          "styleLibraryName": "~src/css/theme"
-        }
-      ]
-    ]
+    "transform-vue-jsx"
   ],
   "comments": false,
   "env": {

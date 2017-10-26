@@ -7,8 +7,7 @@ import axios from "./common/axios";
 import filters from "./filters";
 import VueProgressBar from "vue-progressbar";
 import Element from "element-ui";
-// import 'element-ui/lib/theme-default/index.css';
-// import "./css/theme/index.css";
+import 'element-ui/lib/theme-default/index.css';
 import ImpPanel from "./components/panel.vue";
 
 Vue.prototype.$http = axios
