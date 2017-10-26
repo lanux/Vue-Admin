@@ -9,7 +9,15 @@ npm install
 # serve with hot reload at localhost:9000
 npm run dev
 npm run build
+
+npm run mock
 ```
+
+1. **启动mock服务**
+npm run mock
+2. **启动dev server**
+npm run dev
+
 
 - #### 打包发布,修改根路径名
 1. 修改 **[./Vue-Admin/config/index.js](https://github.com/lanux/Vue-Admin/blob/master/config/index.js)**   参数:build.assetsPublicPath

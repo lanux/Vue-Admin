@@ -4,7 +4,7 @@ import routeConfig from "./routes";
 import {sync} from "vuex-router-sync";
 import store from "../store";
 import types from "../store/mutation-types";
-import auth from "../auth";
+import auth from "../common/auth";
 
 //加载路由中间件
 Vue.use(VueRouter)

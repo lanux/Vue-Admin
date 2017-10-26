@@ -48,7 +48,7 @@
 <script>
   import types from '../store/mutation-types'
   import * as api from "../api"
-  import  auth from '../auth'
+  import  auth from '../common/auth'
   import * as sysApi from '../services/sys'
   import {mapGetters, mapActions, mapMutations} from 'vuex'
 

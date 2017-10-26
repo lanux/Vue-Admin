@@ -1,6 +1,6 @@
 import axios from "axios";
 import qs from "qs";
-import auth from "../auth";
+import auth from "./auth";
 import { getBaseUrl } from "../common/utils";
 import { MessageBox } from "element-ui";
 
