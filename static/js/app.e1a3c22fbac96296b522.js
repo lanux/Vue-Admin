@@ -1026,7 +1026,7 @@ exports.default = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.item.children && _vm.item.children.length>0)?_c('el-submenu',{attrs:{"index":_vm.item.href}},[_c('template',{attrs:{"slot":"title"},slot:"title"},[_c('i',{class:_vm.item.icon}),_c('span',[_vm._v(_vm._s(_vm.item.name))])]),_vm._v(" "),_vm._l((_vm.item.children),function(child){return [(child.children && child.children.length>0)?_c('sub-menu',{attrs:{"param":child}}):_c('el-menu-item',{attrs:{"index":child.href}},[_c('i',{class:child.icon}),_c('span',[_vm._v(_vm._s(child.name))])])]})],2):_c('el-menu-item',{attrs:{"index":_vm.item.href}},[_c('i',{class:_vm.item.icon}),_c('span',[_vm._v(_vm._s(_vm.item.name))])])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.item.children && _vm.item.children.length>0)?_c('el-submenu',{staticClass:"el-menu-sub",attrs:{"index":_vm.item.href}},[_c('template',{attrs:{"slot":"title"},slot:"title"},[_c('i',{class:_vm.item.icon}),_c('span',[_vm._v(_vm._s(_vm.item.name))])]),_vm._v(" "),_vm._l((_vm.item.children),function(child){return [(child.children && child.children.length>0)?_c('sub-menu',{attrs:{"param":child}}):_c('el-menu-item',{attrs:{"index":child.href}},[_c('i',{class:child.icon}),_c('span',[_vm._v(_vm._s(child.name))])])]})],2):_c('el-menu-item',{staticClass:"el-menu-each",attrs:{"index":_vm.item.href}},[_c('i',{class:_vm.item.icon}),_c('span',[_vm._v(_vm._s(_vm.item.name))])])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -1037,7 +1037,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('aside',{staticClass:"main-sidebar animated",class:{ showSlide: _vm.sidebar.show, hideSlide: !_vm.sidebar.show, expandSide:(!_vm.sidebar.collapsed||_vm.device.isMobile)}},[((!_vm.sidebar.collapsed||_vm.device.isMobile))?_c('el-scrollbar',{attrs:{"tag":"div","wrapClass":"vue-scrollbar"}},[_c('div',{staticClass:"sidebar"},[_c('el-menu',{staticClass:"el-menu-vertical-demo",attrs:{"default-active":_vm.onRoutes,"default-openeds":_vm.onRouteKeys,"theme":"light","router":"","collapse":_vm.sidebar.collapsed&&!_vm.device.isMobile},on:{"select":_vm.handleSelect}},[_vm._l((_vm.menuList),function(item){return [_c('sub-menu',{attrs:{"param":item}})]})],2)],1)]):_c('div',{staticClass:"sidebar"},[_c('el-menu',{staticClass:"el-menu-vertical-demo",attrs:{"default-active":_vm.onRoutes,"theme":"light","router":"","collapse":_vm.sidebar.collapsed&&!_vm.device.isMobile},on:{"select":_vm.handleSelect}},[_vm._l((_vm.menuList),function(item){return [_c('sub-menu',{attrs:{"param":item}})]})],2)],1)],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('aside',{staticClass:"main-sidebar animated",class:{ showSlide: _vm.sidebar.show, hideSlide: !_vm.sidebar.show, expandSide:(!_vm.sidebar.collapsed||_vm.device.isMobile)}},[((!_vm.sidebar.collapsed||_vm.device.isMobile))?_c('el-scrollbar',{attrs:{"tag":"div","wrapClass":"vue-scrollbar"}},[_c('div',{staticClass:"sidebar"},[_c('el-menu',{staticClass:"el-menu-style",attrs:{"default-active":_vm.onRoutes,"default-openeds":_vm.onRouteKeys,"theme":"light","router":"","collapse":_vm.sidebar.collapsed&&!_vm.device.isMobile},on:{"select":_vm.handleSelect}},[_vm._l((_vm.menuList),function(item){return [_c('sub-menu',{attrs:{"param":item}})]})],2)],1)]):_c('div',{staticClass:"sidebar"},[_c('el-menu',{staticClass:"el-menu-style",attrs:{"default-active":_vm.onRoutes,"theme":"light","router":"","collapse":_vm.sidebar.collapsed&&!_vm.device.isMobile},on:{"select":_vm.handleSelect}},[_vm._l((_vm.menuList),function(item){return [_c('sub-menu',{attrs:{"param":item}})]})],2)],1)],1)}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -3963,4 +3963,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 },[398]);
-//# sourceMappingURL=app.c3f62db5ffb7e8d92871.js.map
+//# sourceMappingURL=app.e1a3c22fbac96296b522.js.map
