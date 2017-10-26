@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import types from "./mutation-types";
-import defaultValue from "../pages/sys/default";
+import defaultValue from "../services/default";
 import * as api from "../api";
 import { getCurrentMenu, getSessionKey } from '../common/utils'
 

@@ -49,6 +49,7 @@
   import types from '../store/mutation-types'
   import * as api from "../api"
   import  auth from '../auth'
+  import * as sysApi from '../services/sys'
   import {mapGetters, mapActions, mapMutations} from 'vuex'
 
   export default {
@@ -74,10 +75,8 @@
         if (this.$route.query && this.$route.query != null && this.$route.query.redirect && this.$route.query.redirect != null) {
           redirectUrl = this.$route.query.redirect;
         }
-        this.$http.post(api.LOGIN, this.form).then(res => {
-          this.loginSuccess({...res.data,redirectUrl})
-        }).catch(error=>{
-          this.loginSuccess({user: {name: "管理员"}, redirectUrl, sid: '1234567890',})
+        sysApi.login(this.form).then(res => {
+          this.loginSuccess({...res,redirectUrl})
         })
       },
       loginSuccess({sid,user,redirectUrl}){

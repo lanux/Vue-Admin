@@ -30,7 +30,6 @@
 ·
 <script>
   import * as types from '../store/mutation-types'
-  import api from '../axios'
   export default {
     name: 'login',
     data() {
@@ -100,7 +99,7 @@
         this.$refs[formName].validate((valid) => {
           if (valid) {
             let opt = this.registerValidateForm;
-            api.userRegister(opt).then(({
+            this.$http.post(opt).then(({
               data
             }) => {
               if (data.success) {

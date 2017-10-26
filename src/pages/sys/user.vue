@@ -119,7 +119,7 @@
   import panel from "../../components/panel.vue"
   import * as api from "../../api"
   import testData from "../../../static/data/data.json"
-  import defaultValue from "./default";
+  import * as sysApi from '../../services/sys'
 
   export default {
     components: {
@@ -160,18 +160,17 @@
         this.currentRow = row;
         this.dialogVisible = true;
         if (this.roleTree.length <= 0) {
-          this.$http.get( api.SYS_ROLE_LIST + "?selectChildren=true")
+          sysApi.roleList({selectChildren:true})
             .then(res => {
-              this.roleTree = res.data.roleList
-            })
-            .catch(err=>{
-              this.roleTree = defaultValue.roleList
+              this.roleTree = res
             })
         }
         this.$http.get(api.SYS_USER_ROLE + "?id=" + row.id)
           .then(res => {
             this.$refs.roleTree.setCheckedKeys(res.data);
-          })
+          }).catch(err=>{
+
+        })
       },
       configUserRoles(){
         let checkedKeys = this.$refs.roleTree.getCheckedKeys();
@@ -198,14 +197,14 @@
         });
       },
       loadData(){
-          this.$http.get(api.SYS_USER_PAGE + "?key=" + this.searchKey + "&pageSize=" + this.tableData.pagination.pageSize + "&pageNo=" + this.tableData.pagination.pageNo)
+          sysApi.userList({
+            key: this.searchKey,
+            pageSize: this.tableData.pagination.pageSize,
+            pageNo: this.tableData.pagination.pageNo
+          })
           .then(res => {
-            this.tableData.rows = res.data.records;
-            this.tableData.pagination.total = res.data.total;
-          }).catch(err=>{
-            debugger
-            this.tableData.rows = defaultValue.userList;
-            this.tableData.pagination.total = 99;
+            this.tableData.rows = res.records;
+            this.tableData.pagination.total = res.total;
           });
       }
     },

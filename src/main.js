@@ -3,7 +3,7 @@ import Vue from "vue";
 import frame from "./frame.vue";
 import router from "./router";
 import store from "./store";
-import axios from "./axios";
+import axios from "./common/axios";
 import filters from "./filters";
 import VueProgressBar from "vue-progressbar";
 import Element from "element-ui";
@@ -11,6 +11,9 @@ import Element from "element-ui";
 // import "./css/theme/index.css";
 import ImpPanel from "./components/panel.vue";
 
+Vue.prototype.$http = axios
+Vue.axios = axios
+Vue.http = axios;
 Vue.use(axios);
 
 Vue.use(Element);

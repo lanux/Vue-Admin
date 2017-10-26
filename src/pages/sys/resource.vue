@@ -70,7 +70,7 @@
   import selectTree from "../../components/selectTree.vue"
   import treeter from "../../components/treeter"
   import merge from 'element-ui/src/utils/merge';
-  import defaultValue from "./default";
+  import * as sysApi from '../../services/sys'
 
   import * as api from "../../api"
 
@@ -199,15 +199,11 @@
         }
       },
       load(){
-        this.$http.get(api.SYS_RESOURCE_LIST)
+        sysApi.resourceList()
           .then(res=>{
             this.resourceTree = [];
-            this.resourceTree.push(...res.data)
-          }).catch((error) => {
-          console.log(error)
-          this.resourceTree = [];
-          this.resourceTree.push(...defaultValue.resource)
-        })
+            this.resourceTree.push(...res)
+          })
       }
     },
     created(){

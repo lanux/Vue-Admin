@@ -27,7 +27,7 @@ module.exports = {
     port: 9000,
     autoOpenBrowser: false,
     assetsSubDirectory: 'static',
-    assetsPublicPath: '',
+    assetsPublicPath: '/',
     proxyTable: {
       // http://localhost:9000/api/menuList => http://localhost:3000/menuList
       '/api': {

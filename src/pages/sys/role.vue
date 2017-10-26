@@ -83,7 +83,7 @@
   import panel from "../../components/panel.vue"
   import selectTree from "../../components/selectTree.vue"
   import treeter from "../../components/treeter"
-  import defaultValue from "./default";
+  import * as sysApi from '../../services/sys'
 
 
   import * as api from "../../api"
@@ -200,15 +200,10 @@
         })
       },
       load(){
-        this.$http.get(api.SYS_ROLE_LIST)
-          .then(res => {
+        sysApi.roleList().then(res => {
             this.roleTree = [];
-            this.roleTree.push(...res.data)
-          }).catch((error) => {
-          console.log(error)
-          this.roleTree = [];
-          this.roleTree.push(...defaultValue.roleList)
-        })
+            this.roleTree.push(...res)
+          })
       },
       renderContent(h, {node, data, store}) {
         return (
@@ -227,21 +222,18 @@
           this.dialogVisible = true;
           if(this.resourceTree==null||this.resourceTree.length<=0){
             this.dialogLoading = true;
-            this.$http.get(api.SYS_RESOURCE_LIST)
+            sysApi.resourceList()
               .then(res => {
                 this.dialogLoading = false;
-                this.resourceTree = res.data.resourceList;
-              }).catch((error) => {
-                console.log(error)
-                this.dialogLoading = false;
-              this.resourceTree = defaultValue.resource;
-
-            })
+                this.resourceTree = res;
+              })
           }
         this.$http.get(api.SYS_ROLE_RESOURCE + "?id=" + id)
           .then(res => {
             this.$refs.resourceTree.setCheckedKeys(res.data);
-          })
+          }).catch(err=> {
+
+        })
       }
     },
     created(){

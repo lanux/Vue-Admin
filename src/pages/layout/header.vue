@@ -17,9 +17,9 @@
           </div>
           <el-dropdown-menu>
             <ul class="message-list">
-            <li v-for="item in list"><!-- start message -->
+            <li v-for="(item,index) in list"><!-- start message -->
             <router-link :to="{path:'/sys/message',query:{id:item.id}}">
-            <p>{{item.title}}</p>
+            <p>{{index + 1}}. {{item.title}}</p>
             </router-link>
             </li>
             </ul>
@@ -58,6 +58,8 @@
   import types from "../../store/mutation-types"
   import * as api from "../../api"
   import  auth from '../../auth'
+  import * as sysApi from '../../services/sys'
+
   export default {
     data(){
       return {
@@ -120,21 +122,12 @@
       }
       this.count = 0;
       this.list = [];
-      this.$http.get(api.MSG_TOP_TEN)
+      sysApi.msgList()
         .then(res => {
-            if (res.data && res.data.length>0){
-                this.count = res.data.length;
-                this.list = res.data;
+            if (res && res.length>0){
+                this.count = res.length;
+                this.list = res;
             }
-        })
-        .catch(err=>{
-          this.list = [{"id":"640000201501165883","type":0,"code":107,"timeLine":"2013031613","message":"阶期查音音南这认式给自来走事。手进全线引其质行族导深些。","title":"作几点内部重压示现或采候器日","createTime":"426050337874","senderName":"Hall","senderPic":"http://dummyimage.com/100x100/f2799f/757575.png&text=H"},
-            {"id":"15000019760303327X","type":1,"code":109,"timeLine":"1994030718","message":"听飞叫例感给其团南织主作什。","title":"府铁些以眼铁南单行办其被眼线","createTime":"612808881585","senderName":"Hall","senderPic":"http://dummyimage.com/100x100/79c3f2/757575.png&text=H"},
-            {"id":"530000198607165793","type":1,"code":106,"timeLine":"1990122503","message":"于学认气感很效效引需说报党。调应各近思常市美许自毛完容矿日增。","title":"整近律马造起米农员济解题自例识个","createTime":"234654265042","senderName":"Rodriguez","senderPic":"http://dummyimage.com/100x100/e6f279/757575.png&text=R"},
-            {"id":"320000200905032842","type":1,"code":103,"timeLine":"1980062104","message":"除年命却积同部去断权议党低二易过。","title":"消问料品把精是器话","createTime":"1194108860623","senderName":"Lewis","senderPic":"http://dummyimage.com/100x100/da79f2/757575.png&text=L"},
-            {"id":"210000198109172937","type":1,"code":104,"timeLine":"1993041210","message":"具都主部确特次取圆派不儿日和难力。","title":"导结计市色通证确高想","createTime":"374284498307","senderName":"Hernandez","senderPic":"http://dummyimage.com/100x100/79f2b7/757575.png&text=H"},
-            {"id":"410000200402164212","type":1,"code":108,"timeLine":"2015123015","message":"青矿地级质还进眼件每产它整区土容斯消。","title":"治龙工必近思空例东应","createTime":"626036503938","senderName":"Martinez","senderPic":"http://dummyimage.com/100x100/f29479/757575.png&text=M"}]
-          this.count = this.list.length;
         })
     },
     mounted() {
@@ -159,7 +152,7 @@
     position: fixed;
     min-width: 100%;
     box-shadow: 0 2px 3px hsla(0, 0%, 7%, .1), 0 0 0 1px hsla(0, 0%, 7%, .1);
-    z-index: 9999;
+    z-index: 1999;
     animation-name: slideInDown;
     animation-fill-mode: both;
     color: #48576a;
