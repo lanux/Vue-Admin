@@ -1,11 +1,4 @@
 {
-
-  "loginInfo": {
-      "sid": "1234567890",
-      "user": {
-        "name": "管理员"
-      }
-  },
   "resourceList":[{"id":52,"parentId":null,"sort":0,"name":"登录","code":"/login","type":3,"usable":"1","remarks":"","children":[]},
     {"id":68,"parentId":null,"sort":0,"name":"仪表盘","code":"/index","type":1,"usable":"1","remarks":"","children":[]},
     {"id":69,"parentId":null,"sort":0,"name":"系统管理","code":"/sys","type":1,"usable":"1","remarks":"","children":[{"id":82,"parentId":69,"sort":0,"name":"资源管理","code":"/sys/resource","type":1,"usable":"1","remarks":"","children":[{"id":99,"parentId":82,"sort":0,"name":"/sys/resource/get","code":"/sys/resource/get","type":3,"usable":"1","remarks":"","children":[]},
@@ -38,15 +31,6 @@
         {"id":110,"parentId":72,"sort":0,"name":"/sys/user/page","code":"/sys/user/page","type":3,"usable":"1","remarks":"","children":[]},
         {"id":111,"parentId":72,"sort":0,"name":"/sys/user/roleIds","code":"/sys/user/roleIds","type":3,"usable":"1","remarks":"","children":[]},
         {"id":112,"parentId":72,"sort":0,"name":"/sys/user/setRoles","code":"/sys/user/setRoles","type":3,"usable":"1","remarks":"","children":[]}]}]}],
-  "messageList":[
-    {"id":196,"title":"测试消息1","summary":"1张产品图片处理","userId":1,"entityId":1},
-    {"id":196,"title":"测试消息2","summary":"1张产品图片处理","userId":1,"entityId":2},
-    {"id":196,"title":"测试消息3","summary":"1张产品图片处理","userId":1,"entityId":3},
-    {"id":196,"title":"测试消息4","summary":"1张产品图片处理","userId":1,"entityId":4},
-    {"id":196,"title":"测试消息5","summary":"1张产品图片处理","userId":1,"entityId":5},
-    {"id":196,"title":"测试消息6","summary":"1张产品图片处理","userId":1,"entityId":6},
-    {"id":195,"title":"测试消息7","summary":"1张产品图片处理","userId":1,"entityId":7}
-  ],
   "menuList": [
     {"id":1,"parentId":null,"sort":0,"name":"仪表盘","href":"/index","icon":"fa fa-dashboard","children":[],
       "isShow":"1"},
@@ -64,7 +48,7 @@
       {"id":103,"parentId":102,"sort":0,"name":"测试2-1","href":"/test/2/1","icon":"fa fa-image","children":[],"isShow":"1"}
     ]
     ,"isShow":"1"},
-    {"id":6,"parentId":null,"sort":6,"name":"系统管理","href":"/sys","icon":"el-icon-setting","children":
+    {"id":6,"parentId":null,"sort":6,"name":"系统管理","href":"/sys","icon":"fa fa-cog","children":
     [
       {"id":108,"parentId":6,"sort":0,"name":" 资源管理","href":"/sys/resource","icon":"fa fa-database","children":[],"isShow":"1"},
       {"id":7,"parentId":6,"sort":1,"name":"菜单管理","href":"/sys/menuList","icon":"fa fa-navicon","children":[],"isShow":"1"},
@@ -89,5 +73,117 @@
     {"id":67,"delFlag":"0","companyId":null,"officeId":null,"loginName":"lanux","password":null,"no":null,"name":"12345","email":null,"phone":null,"mobile":null,"userType":null,"photo":null,"loginIp":null,"loginDate":null,"loginFlag":null,"remarks":null,"status":null,"token":null},
     {"id":78,"delFlag":"0","companyId":null,"officeId":null,"loginName":"lanux","password":null,"no":null,"name":"12345","email":"lanux@foxmail.com","phone":null,"mobile":null,"userType":null,"photo":null,"loginIp":null,"loginDate":null,"loginFlag":null,"remarks":null,"status":null,"token":null},
     {"id":87,"delFlag":"0","companyId":null,"officeId":null,"loginName":"lanux","password":null,"no":null,"name":"12345","email":"lanux@foxmail.com","phone":null,"mobile":null,"userType":null,"photo":null,"loginIp":null,"loginDate":null,"loginFlag":null,"remarks":null,"status":null,"token":null}
+  ],
+  "messageList":[
+    {
+      "id": "640000201501165883",
+      "type": 0,
+      "code": 107,
+      "timeLine": "2013031613",
+      "message": "阶期查音音南这认式给自来走事。手进全线引其质行族导深些。",
+      "title": "作几点内部重压示现或采候器日",
+      "createTime": "426050337874",
+      "senderName": "Hall",
+      "senderPic": "http://dummyimage.com/100x100/f2799f/757575.png&text=H"
+    },
+    {
+      "id": "15000019760303327X",
+      "type": 1,
+      "code": 109,
+      "timeLine": "1994030718",
+      "message": "听飞叫例感给其团南织主作什。",
+      "title": "府铁些以眼铁南单行办其被眼线",
+      "createTime": "612808881585",
+      "senderName": "Hall",
+      "senderPic": "http://dummyimage.com/100x100/79c3f2/757575.png&text=H"
+    },
+    {
+      "id": "530000198607165793",
+      "type": 1,
+      "code": 106,
+      "timeLine": "1990122503",
+      "message": "于学认气感很效效引需说报党。调应各近思常市美许自毛完容矿日增。",
+      "title": "整近律马造起米农员济解题自例识个",
+      "createTime": "234654265042",
+      "senderName": "Rodriguez",
+      "senderPic": "http://dummyimage.com/100x100/e6f279/757575.png&text=R"
+    },
+    {
+      "id": "320000200905032842",
+      "type": 1,
+      "code": 103,
+      "timeLine": "1980062104",
+      "message": "除年命却积同部去断权议党低二易过。",
+      "title": "消问料品把精是器话",
+      "createTime": "1194108860623",
+      "senderName": "Lewis",
+      "senderPic": "http://dummyimage.com/100x100/da79f2/757575.png&text=L"
+    },
+    {
+      "id": "210000198109172937",
+      "type": 1,
+      "code": 104,
+      "timeLine": "1993041210",
+      "message": "具都主部确特次取圆派不儿日和难力。",
+      "title": "导结计市色通证确高想",
+      "createTime": "374284498307",
+      "senderName": "Hernandez",
+      "senderPic": "http://dummyimage.com/100x100/79f2b7/757575.png&text=H"
+    },
+    {
+      "id": "410000200402164212",
+      "type": 1,
+      "code": 108,
+      "timeLine": "2015123015",
+      "message": "青矿地级质还进眼件每产它整区土容斯消。",
+      "title": "治龙工必近思空例东应",
+      "createTime": "626036503938",
+      "senderName": "Martinez",
+      "senderPic": "http://dummyimage.com/100x100/f29479/757575.png&text=M"
+    },
+    {
+      "id": "620000198507210923",
+      "type": 0,
+      "code": 104,
+      "timeLine": "1983120914",
+      "message": "意动林设状军红关风家声会政复增低。上指置由步联其气养精直该才清。信果此二存日效产学者今打品江代面。",
+      "title": "教月历统其等革法格油满精发光",
+      "createTime": "778399865782",
+      "senderName": "Rodriguez",
+      "senderPic": "http://dummyimage.com/100x100/7981f2/757575.png&text=R"
+    },
+    {
+      "id": "330000198108089346",
+      "type": 1,
+      "code": 108,
+      "timeLine": "1983032322",
+      "message": "温象采色已必使战素并京名或们。报始民名料是究要系后体治给单消容且。",
+      "title": "此个同但基广流看",
+      "createTime": "396531147139",
+      "senderName": "Robinson",
+      "senderPic": "http://dummyimage.com/100x100/a4f279/757575.png&text=R"
+    },
+    {
+      "id": "82000019811016775X",
+      "type": 0,
+      "code": 105,
+      "timeLine": "1970082304",
+      "message": "你最志造越员因说转拉克要书实结心存。化研则济得象青便图造拉世格。",
+      "title": "也作队思国月义听办研成",
+      "createTime": "1429957209433",
+      "senderName": "Anderson",
+      "senderPic": "http://dummyimage.com/100x100/f279c8/757575.png&text=A"
+    },
+    {
+      "id": "710000198510122053",
+      "type": 0,
+      "code": 104,
+      "timeLine": "2014052203",
+      "message": "科三解角响观府你满在可之。权任合区员学它果接领速广断领按。",
+      "title": "几它场新亲农也区技须究声完社情",
+      "createTime": "1013282383046",
+      "senderName": "Wilson",
+      "senderPic": "http://dummyimage.com/100x100/79ebf2/757575.png&text=W"
+    }
   ]
 }
