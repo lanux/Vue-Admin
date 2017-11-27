@@ -7,7 +7,7 @@
 ``` bash
 npm install
 
-# 修改文件内容/build/webpack.base.conf.js，讲element-ui和vuex-router-sync版本替换成install后node_modules目录中当前版本，注意不能用软链
+# 修改文件内容/build/webpack.base.conf.js，将element-ui和vuex-router-sync版本替换成install后node_modules目录中当前版本，注意不能用软链
 #      {
 #        test: /\.js$/,
 #        loader: 'babel-loader',
