@@ -6,6 +6,23 @@
 ## Build Setup
 ``` bash
 npm install
+
+# 修改文件内容/build/webpack.base.conf.js，讲element-ui和vuex-router-sync版本替换成install后node_modules目录中当前版本，注意不能用软链
+#      {
+#        test: /\.js$/,
+#        loader: 'babel-loader',
+#        //exclude: /(node_modules|bower_components)/,
+#        // 注意elementUI的源码使用ES6需要解析
+#        include: [
+#          resolve('src'),
+#          resolve('test'),
+#          resolve('/node_modules/.1.4.8@element-ui/src'),
+#          resolve('/node_modules/.1.4.8@element-ui/packages'),
+#          resolve('/node_modules/.4.3.0@vuex-router-sync')
+#        ]
+#      },
+
+
 # serve with hot reload at localhost:9000
 npm run dev
 npm run build
